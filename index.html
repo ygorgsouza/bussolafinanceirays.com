@@ -52,22 +52,22 @@
   /* ===== Hero ===== */
   .hero{ background:var(--grad-hero); color:var(--on-dark); padding:64px 0 0; position:relative; overflow:hidden; }
   .hero-inner{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:center; padding-bottom:56px; }
-  @media (max-width:860px){ .hero-inner{grid-template-columns:1fr; text-align:center;} }
+  @media (max-width:1024px){ .hero-inner{grid-template-columns:1fr; text-align:center;} }
   .eyebrow{ display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--on-dark-soft); background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); padding:6px 14px; border-radius:999px; margin-bottom:20px; }
   .eyebrow-dot{ width:6px; height:6px; border-radius:50%; background:var(--accent2); }
   .hero h1{ font-size:44px; line-height:1.12; margin:0 0 18px; color:#F8F3E4; }
   .hero h1 .grad{ background:linear-gradient(90deg, #9FE6D8, #D8CCFF); -webkit-background-clip:text; background-clip:text; color:transparent; }
   @media (max-width:680px){ .hero h1{font-size:32px;} }
   .hero p.lead{ font-size:16px; line-height:1.6; color:var(--on-dark-soft); max-width:480px; margin:0 0 28px; }
-  @media (max-width:860px){ .hero p.lead{margin-left:auto; margin-right:auto;} }
+  @media (max-width:1024px){ .hero p.lead{margin-left:auto; margin-right:auto;} }
   .hero-ctas{ display:flex; gap:12px; flex-wrap:wrap; }
-  @media (max-width:860px){ .hero-ctas{justify-content:center;} }
+  @media (max-width:1024px){ .hero-ctas{justify-content:center;} }
   .btn-primary-lg{ background:var(--grad-accent); color:#fff; padding:14px 26px; border-radius:999px; font-weight:700; font-size:14.5px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:transform .15s ease, box-shadow .15s ease; box-shadow:0 10px 26px -10px rgba(14,156,140,0.55); }
   .btn-primary-lg:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -10px rgba(108,79,214,0.55); }
   .btn-secondary-lg{ background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.16); color:#F4EFDF; padding:14px 24px; border-radius:999px; font-weight:600; font-size:14.5px; text-decoration:none; transition:background .15s ease; }
   .btn-secondary-lg:hover{ background:rgba(255,255,255,0.12); }
   .hero-trust{ display:flex; gap:18px; margin-top:26px; flex-wrap:wrap; font-size:12px; color:var(--on-dark-soft); }
-  @media (max-width:860px){ .hero-trust{justify-content:center;} }
+  @media (max-width:1024px){ .hero-trust{justify-content:center;} }
   .hero-trust span{ display:flex; align-items:center; gap:6px; }
 
   /* Signature: rotating compass dial */
@@ -380,8 +380,8 @@
     <div class="nav-brand"><img id="navSeal" alt=""> Bússola Financeira YS</div>
     <div class="nav-links">
       <a href="#produto">Produto</a>
-      <a href="#como-funciona">Como funciona</a>
       <a href="#missao">Nossa Missão</a>
+      <a href="#como-funciona">Como funciona</a>
       <a href="#privacidade">Privacidade</a>
       <a href="#termos">Termos de Uso</a>
       <a href="#faq">FAQ</a>
@@ -395,7 +395,8 @@
   <div class="wrap hero-inner">
     <div>
       <div class="eyebrow"><span class="eyebrow-dot"></span> Pagamento único · sem mensalidade</div>
-      <h1>Organize sua vida financeira.<br><span class="grad">Do controle financeiro à construção do seu patrimônio.</span></h1>
+      <h1>Organize sua vida financeira.</h1>
+      <p class="lead" style="font-weight:600; color:#F8F3E4; margin-bottom:6px;">Do controle financeiro à construção do seu patrimônio.</p>
       <p class="lead" style="font-weight:600; color:#F8F3E4;">Assuma o controle. Encontre a direção. Construa o seu futuro.</p>
       <p class="lead">O painel completo para controlar renda, gastos, cartões, dívidas e investimentos — com rendimento real calculado automaticamente. Tudo no seu navegador, seus dados nunca saem dele.</p>
       <div class="hero-ctas">
@@ -462,35 +463,6 @@
 </header>
 
 <main>
-
-  <section id="missao">
-    <div class="wrap">
-      <div class="section-intro-center">
-        <div class="section-eyebrow">Por que a Bússola existe</div>
-        <h2 class="section-title">Um painel para você parar de administrar a vida financeira no escuro</h2>
-        <p class="mission-lead">A <strong>Bússola Financeira YS</strong> nasceu de uma necessidade bem prática: organizar renda, gastos, cartões, dívidas e investimentos num único lugar, sem depender de anotações soltas, papel ou aplicativo que vende seus dados. Ela é o primeiro documento de uma coleção que está apenas começando — pensado para quem quer parar de adiar o controle financeiro e passar a agir, todos os meses, com números reais na frente.</p>
-      </div>
-
-      <div class="mission-grid">
-        <div class="mission-card">
-          <div class="tag">O que existe hoje</div>
-          <h3>Bússola Financeira YS</h3>
-          <p>Um painel único e completo: dashboard automático, receitas, despesas, cartões, dívidas, investimentos com rendimento real, projeções, metas e análises. Tudo dentro de um único arquivo, sem instalação.</p>
-        </div>
-        <div class="mission-card">
-          <div class="tag">Nossa missão</div>
-          <h3>Autonomia financeira de verdade</h3>
-          <p>Acreditamos que ninguém deveria depender de terceiros — nem de métodos complicados — para saber para onde vai o próprio dinheiro. A missão é simples: dar clareza e ferramenta prática para você decidir com informação, não no achismo.</p>
-        </div>
-        <div class="mission-card">
-          <div class="tag">O que queremos para você</div>
-          <h3>Que você retome o controle</h3>
-          <p>Que em 30 dias você saiba exatamente onde está o seu dinheiro. Em 90 dias, que você já tenha começado a investir com regularidade. E que, daqui a um ano, controlar as suas finanças seja um hábito — não uma tarefa que te dá ansiedade.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
 
   <section id="produto" style="background:var(--surface-2);">
     <div class="wrap">
@@ -563,6 +535,35 @@
           <div class="testimonial-author"><strong>Ygor Souza</strong> — fundador da Bússola Financeira YS e criador de soluções práticas para organização financeira. Desenvolveu o método BF a partir da própria experiência, transformando um simples controle financeiro em uma estratégia de construção de patrimônio.</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="missao">
+    <div class="wrap">
+      <div class="section-intro-center">
+        <div class="section-eyebrow">Por que a Bússola existe</div>
+        <h2 class="section-title">Um painel para você parar de administrar a vida financeira no escuro</h2>
+        <p class="mission-lead">A <strong>Bússola Financeira YS</strong> nasceu de uma necessidade bem prática: organizar renda, gastos, cartões, dívidas e investimentos num único lugar, sem depender de anotações soltas, papel ou aplicativo que vende seus dados. Ela é o primeiro documento de uma coleção que está apenas começando — pensado para quem quer parar de adiar o controle financeiro e passar a agir, todos os meses, com números reais na frente.</p>
+      </div>
+
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="tag">O que existe hoje</div>
+          <h3>Bússola Financeira YS</h3>
+          <p>Um painel único e completo: dashboard automático, receitas, despesas, cartões, dívidas, investimentos com rendimento real, projeções, metas e análises. Tudo dentro de um único arquivo, sem instalação.</p>
+        </div>
+        <div class="mission-card">
+          <div class="tag">Nossa missão</div>
+          <h3>Autonomia financeira de verdade</h3>
+          <p>Acreditamos que ninguém deveria depender de terceiros — nem de métodos complicados — para saber para onde vai o próprio dinheiro. A missão é simples: dar clareza e ferramenta prática para você decidir com informação, não no achismo.</p>
+        </div>
+        <div class="mission-card">
+          <div class="tag">O que queremos para você</div>
+          <h3>Que você retome o controle</h3>
+          <p>Que em 30 dias você saiba exatamente onde está o seu dinheiro. Em 90 dias, que você já tenha começado a investir com regularidade. E que, daqui a um ano, controlar as suas finanças seja um hábito — não uma tarefa que te dá ansiedade.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -753,12 +754,22 @@
           <h3>Suporte incluso, dados sob sua guarda</h3>
           <p>O suporte por e-mail e o chat integrado estão inclusos, por tempo indeterminado. Os seus dados financeiros ficam salvos apenas no seu navegador — a guarda do backup é de sua responsabilidade.</p>
         </div>
+        <div class="mission-card">
+          <div class="tag">Cancelamento</div>
+          <h3>Sem mensalidade para cancelar</h3>
+          <p>Como é um pagamento único, não existe assinatura para cancelar. Condições de reembolso seguem a política da plataforma de checkout usada na compra.</p>
+        </div>
+        <div class="mission-card">
+          <div class="tag">Alterações</div>
+          <h3>Estes termos podem ser atualizados</h3>
+          <p>Podemos atualizar estes Termos de Uso ao longo do tempo, sempre publicados nesta mesma página. Recomendamos revisitar esta seção de vez em quando.</p>
+        </div>
       </div>
       <p style="font-size:12.8px; color:var(--text-soft); margin-top:24px;">Dúvidas sobre estas condições? Escreva para <a href="mailto:suporte@bussolafinanceirays.com" style="color:var(--accent2); font-weight:600;">suporte@bussolafinanceirays.com</a>.</p>
     </div>
   </section>
 
-  <section id="faq" style="background:var(--surface-2);">
+  <section id="faq" style="background:var(--surface-2); padding-top:0;">
     <div class="wrap">
       <div class="section-eyebrow">Dúvidas frequentes</div>
       <h2 class="section-title">Antes de comprar</h2>
@@ -859,8 +870,8 @@
       </div>
       <div class="footer-links">
         <a href="#produto">Produto</a>
-        <a href="#como-funciona">Como funciona</a>
         <a href="#missao">Missão</a>
+        <a href="#como-funciona">Como funciona</a>
         <a href="#privacidade">Privacidade</a>
         <a href="#termos">Termos de uso</a>
         <a href="#faq">FAQ</a>
