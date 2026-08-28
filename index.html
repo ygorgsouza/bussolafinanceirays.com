@@ -38,18 +38,16 @@
   .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
 
   /* ===== Nav ===== */
-  .nav{ position:sticky; top:0; z-index:50; background:rgba(250,246,236,0.96); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
-  .nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
+  .nav{ position:sticky; top:0; z-index:50; background:rgba(250,246,236,0.9); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
   .nav-brand{ display:flex; align-items:center; gap:9px; font-family:'Fraunces', serif; font-weight:600; font-size:16px; }
   .nav-brand img{ width:28px; height:28px; }
+  .nav-links{ display:flex; align-items:center; gap:17px; font-size:12.5px; font-weight:600; }
+  .nav-links a{ text-decoration:none; color:var(--text-soft); transition:color .15s ease; white-space:nowrap; }
+  .nav-links a:hover{ color:var(--text); }
   .nav-cta{ background:var(--surface-dark); color:#fff; padding:9px 18px; border-radius:999px; font-size:13px; font-weight:700; text-decoration:none; transition:transform .15s ease, box-shadow .15s ease; white-space:nowrap; flex-shrink:0; }
   .nav-cta:hover{ transform:translateY(-1px); box-shadow:0 8px 18px -8px rgba(14,156,140,0.5); }
-  .nav-tabs-wrap{ border-top:1px solid var(--line); overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
-  .nav-tabs-wrap::-webkit-scrollbar{ display:none; }
-  .nav-tabs{ display:flex; gap:6px; padding:9px 0; }
-  .nav-tab{ flex-shrink:0; white-space:nowrap; background:none; border:1px solid transparent; padding:7px 14px; border-radius:999px; font-size:12.3px; font-weight:600; color:var(--text-soft); cursor:pointer; font-family:inherit; transition:background .15s ease, color .15s ease, border-color .15s ease; }
-  .nav-tab:hover{ background:var(--surface-2); color:var(--text); }
-  .nav-tab.active{ background:var(--surface-dark); color:#fff; }
+  @media (max-width:980px){ .nav-links{display:none;} }
 
   /* ===== Hero ===== */
   .hero{ background:var(--grad-hero); color:var(--on-dark); padding:64px 0 0; position:relative; overflow:hidden; }
@@ -145,13 +143,13 @@
   .catalog-more .contact-line a:hover{ text-decoration:underline; }
 
   /* ===== Como funciona ===== */
-  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; position:relative; }
-  @media (max-width:900px){ .steps{grid-template-columns:1fr 1fr;} }
-  @media (max-width:560px){ .steps{grid-template-columns:1fr;} }
-  .step{ background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:24px; position:relative; }
-  .steps-track{ position:absolute; top:34px; left:calc(12.5%); right:calc(12.5%); height:2px; background:var(--line); z-index:0; }
+  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  @media (max-width:780px){ .steps{grid-template-columns:1fr;} }
+  .step{ background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:26px; position:relative; }
+  .steps{ position:relative; }
+  .steps-track{ position:absolute; top:34px; left:calc(16.66% ); right:calc(16.66%); height:2px; background:var(--line); z-index:0; }
   .steps-track-fill{ position:absolute; top:0; left:0; height:100%; width:0%; background:var(--grad-accent); transition:width 1.1s cubic-bezier(.16,.84,.44,1); }
-  @media (max-width:900px){ .steps-track{display:none;} }
+  @media (max-width:780px){ .steps-track{display:none;} }
   .step-num{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--accent2); font-weight:700; margin-bottom:12px; position:relative; z-index:1; }
   .step-num::before{ content:""; position:absolute; left:-4px; top:-4px; width:22px; height:22px; border-radius:50%; background:var(--surface); border:2px solid var(--line); z-index:-1; transition:border-color .3s ease, box-shadow .3s ease; }
   .step.is-active .step-num::before{ border-color:var(--accent2); box-shadow:0 0 0 4px var(--accent2-bg); }
@@ -373,22 +371,6 @@
   .mobile-sticky-cta-note{ font-size:10.5px; color:var(--text-soft); }
   .mobile-sticky-cta-btn{ background:var(--grad-accent); color:#fff; padding:12px 20px; border-radius:999px; font-weight:700; font-size:13.5px; text-decoration:none; white-space:nowrap; flex-shrink:0; }
   @media (max-width:680px){ .mobile-sticky-cta{ display:flex; } }
-
-  /* ===== Sistema de abas ===== */
-  .tab-panel{ display:none; }
-  .tab-panel.active{ display:block; animation:fadeTab .25s ease; }
-  @keyframes fadeTab{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
-
-  /* ===== Início: cartão de decisão rápida ===== */
-  .intro-buy-card{ display:grid; grid-template-columns:1.3fr 1fr; gap:28px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:30px 32px; box-shadow:var(--shadow); }
-  @media (max-width:780px){ .intro-buy-card{grid-template-columns:1fr;} }
-  .intro-buy-price{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:24px; }
-  .intro-buy-price .product-buy-btn{ display:block; }
-
-  /* ===== Grid de 4 colunas (Privacidade) ===== */
-  .mission-grid.cols-4{ grid-template-columns:repeat(4,1fr); }
-  @media (max-width:900px){ .mission-grid.cols-4{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:560px){ .mission-grid.cols-4{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -396,22 +378,16 @@
 <nav class="nav">
   <div class="wrap nav-inner">
     <div class="nav-brand"><img id="navSeal" alt=""> Bússola Financeira YS</div>
-    <a class="nav-cta" href="#" id="navBuyBtn">Comprar agora</a>
-  </div>
-  <div class="nav-tabs-wrap">
-    <div class="wrap">
-      <div class="nav-tabs" id="navTabs">
-        <button class="nav-tab active" data-tab="inicio" type="button">Início</button>
-        <button class="nav-tab" data-tab="bussola" type="button">A Bússola</button>
-        <button class="nav-tab" data-tab="recursos" type="button">Recursos</button>
-        <button class="nav-tab" data-tab="como-funciona" type="button">Como funciona</button>
-        <button class="nav-tab" data-tab="suporte" type="button">Chat & Suporte</button>
-        <button class="nav-tab" data-tab="seguranca" type="button">Segurança</button>
-        <button class="nav-tab" data-tab="faq" type="button">FAQ</button>
-        <button class="nav-tab" data-tab="missao" type="button">Nossa Missão</button>
-        <button class="nav-tab" data-tab="contato" type="button">Contacto</button>
-      </div>
+    <div class="nav-links">
+      <a href="#produto">Produto</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#missao">Nossa Missão</a>
+      <a href="#privacidade">Privacidade</a>
+      <a href="#termos">Termos de Uso</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contato">Fale Connosco</a>
     </div>
+    <a class="nav-cta" href="#produto">Comprar agora</a>
   </div>
 </nav>
 
@@ -419,11 +395,12 @@
   <div class="wrap hero-inner">
     <div>
       <div class="eyebrow"><span class="eyebrow-dot"></span> Pagamento único · sem mensalidade</div>
-      <h1>Organize sua vida financeira <span class="grad">sem depender de ninguém</span></h1>
+      <h1>Organize sua vida financeira.<br><span class="grad">Do controle financeiro à construção do seu patrimônio.</span></h1>
+      <p class="lead" style="font-weight:600; color:#F8F3E4;">Assuma o controle. Encontre a direção. Construa o seu futuro.</p>
       <p class="lead">O painel completo para controlar renda, gastos, cartões, dívidas e investimentos — com rendimento real calculado automaticamente. Tudo no seu navegador, seus dados nunca saem dele.</p>
       <div class="hero-ctas">
-        <a class="btn-primary-lg" href="#" id="heroBuyBtn">Quero organizar minhas finanças →</a>
-        <a class="btn-secondary-lg" href="#" data-goto-tab="como-funciona">Ver como funciona</a>
+        <a class="btn-primary-lg" href="#produto">Quero organizar minhas finanças →</a>
+        <a class="btn-secondary-lg" href="#como-funciona">Ver como funciona</a>
       </div>
       <div class="hero-trust">
         <span>🔒 Dados 100% locais</span>
@@ -484,38 +461,38 @@
   </div>
 </header>
 
-<main id="mainContent">
-<div class="tab-panel" id="tab-inicio">
-<section id="inicio-resumo" style="padding-top:20px;">
+<main>
+
+  <section id="missao">
     <div class="wrap">
-      <div class="intro-buy-card">
-        <div class="intro-buy-text">
-          <div class="section-eyebrow">O que é a Bússola</div>
-          <h2 class="section-title" style="font-size:24px;">Um painel só para as suas finanças pessoais</h2>
-          <p class="section-lead" style="margin-bottom:18px;">Renda, despesas, cartões, dívidas e investimentos num único painel, com rendimento real calculado sozinho — sem planilha, sem mensalidade.</p>
-          <ul class="feature-list" style="margin-bottom:0;">
-            <li><span class="feature-check">✓</span> Tudo integrado — dashboard, metas, projeções e análises</li>
-            <li><span class="feature-check">✓</span> Despesa Rápida: categoria, valor e pronto</li>
-            <li><span class="feature-check">✓</span> Dados financeiros 100% locais, no seu navegador</li>
-          </ul>
+      <div class="section-intro-center">
+        <div class="section-eyebrow">Por que a Bússola existe</div>
+        <h2 class="section-title">Um painel para você parar de administrar a vida financeira no escuro</h2>
+        <p class="mission-lead">A <strong>Bússola Financeira YS</strong> nasceu de uma necessidade bem prática: organizar renda, gastos, cartões, dívidas e investimentos num único lugar, sem depender de anotações soltas, papel ou aplicativo que vende seus dados. Ela é o primeiro documento de uma coleção que está apenas começando — pensado para quem quer parar de adiar o controle financeiro e passar a agir, todos os meses, com números reais na frente.</p>
+      </div>
+
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="tag">O que existe hoje</div>
+          <h3>Bússola Financeira YS</h3>
+          <p>Um painel único e completo: dashboard automático, receitas, despesas, cartões, dívidas, investimentos com rendimento real, projeções, metas e análises. Tudo dentro de um único arquivo, sem instalação.</p>
         </div>
-        <div class="intro-buy-price">
-          <div class="product-price-row">
-            <span class="product-price">R$ 149,90</span>
-            <span class="product-price-note">pagamento único</span>
-          </div>
-          <div class="product-payment-note">Pix ou cartão, via checkout seguro.</div>
-          <a class="product-buy-btn" href="#" id="buyLinkIntro">Comprar agora →</a>
-          <a class="product-more-link" href="#" data-goto-tab="bussola" style="display:block; text-align:center; margin-top:12px;">Ver tudo o que está incluído →</a>
+        <div class="mission-card">
+          <div class="tag">Nossa missão</div>
+          <h3>Autonomia financeira de verdade</h3>
+          <p>Acreditamos que ninguém deveria depender de terceiros — nem de métodos complicados — para saber para onde vai o próprio dinheiro. A missão é simples: dar clareza e ferramenta prática para você decidir com informação, não no achismo.</p>
+        </div>
+        <div class="mission-card">
+          <div class="tag">O que queremos para você</div>
+          <h3>Que você retome o controle</h3>
+          <p>Que em 30 dias você saiba exatamente onde está o seu dinheiro. Em 90 dias, que você já tenha começado a investir com regularidade. E que, daqui a um ano, controlar as suas finanças seja um hábito — não uma tarefa que te dá ansiedade.</p>
         </div>
       </div>
+
     </div>
   </section>
-</div>
 
-
-<div class="tab-panel" id="tab-bussola">
-<section id="produto" style="background:var(--surface-2);">
+  <section id="produto" style="background:var(--surface-2);">
     <div class="wrap">
       <div class="section-eyebrow">Produto</div>
       <h2 class="section-title">Um painel, todas as suas finanças</h2>
@@ -534,7 +511,7 @@
               <span class="product-visual-tab" data-i="3">Metas</span>
             </div>
             <div class="product-visual-screen" id="productVisualScreen"></div>
-            <a class="product-visual-peek" id="openProductModalPeek" href="#" data-goto-tab="bussola"><span class="ic">🔍</span> Veja o que você recebe →</a>
+            <span class="product-visual-peek" id="openProductModalPeek"><span class="ic">🔍</span> Veja o que você recebe →</span>
           </div>
           <div class="product-body">
             <div class="product-price-row">
@@ -549,12 +526,27 @@
               <li><span class="feature-check">✓</span> Projeções, metas e relatório para imprimir</li>
               <li><span class="feature-check">✓</span> Modo claro/escuro, funciona offline, dados só seus</li>
             </ul>
-            <a class="product-more-link" id="openProductModal" href="#" data-goto-tab="bussola"><span class="ic">🔍</span> Veja o que você recebe ao comprar →</a>
+            <button class="product-more-link" id="openProductModal" type="button"><span class="ic">🔍</span> Veja o que você recebe ao comprar →</button>
             <a class="product-buy-btn" href="#" id="buyLink">Comprar agora →</a>
           </div>
         </div>
 
+        <div class="catalog-more">
+          <div class="lbl">🧭 Para onde vamos</div>
+          <h4>Mais produtos a caminho</h4>
+          <p>Hoje o nosso foco é ajudar pessoas físicas a encontrar o seu caminho financeiro, organizar melhor a sua vida e ter o suporte necessário para alcançar os seus objetivos. Ao mesmo tempo, já estamos trabalhando para ampliar aos poucos o ecossistema Bússola — sem prometer datas, apenas a direção:</p>
+          <ul>
+            <li>Soluções para quem tem um pequeno negócio</li>
+            <li>Ferramentas para médias empresas</li>
+            <li>Organização e gestão financeira de negócios</li>
+            <li>Softwares adaptados a diferentes necessidades</li>
+            <li>Suporte a outras moedas, como Euro e Dólar</li>
+            <li>Ferramentas cada vez mais personalizadas</li>
+          </ul>
+          <p class="contact-line">Dúvidas sobre a Bússola ou os nossos produtos atuais? Escreva para <a href="mailto:suporte@bussolafinanceirays.com">suporte@bussolafinanceirays.com</a>.</p>
+        </div>
       </div>
+
       <div class="manifesto">
         <div class="lbl">🧭 A garantia real</div>
         <p>Controle muito maior da sua vida financeira. Invista no seu financeiro e no seu psicológico. Controle. Guarde. Saiba para onde vai o seu dinheiro e o que fazer com ele — todos os meses. Você é a sua própria empresa. Ninguém melhor que você para gerenciá-la.</p>
@@ -562,52 +554,7 @@
     </div>
   </section>
 
-<section id="bussola-detalhes" style="padding-top:0;">
-    <div class="wrap">
-      <div class="modal-section-title" style="margin-top:0;">O que você recebe ao comprar</div>
-      <p style="font-size:13.5px; color:var(--text-soft); line-height:1.6; margin:0 0 16px;">Um painel completo com <strong>10 abas</strong>, prontas pra usar assim que você entra na sua conta. Nada de versão limitada — é exatamente o que está descrito abaixo, com o seu nome no topo.</p>
-      <div class="modal-tabs-grid">
-        <div class="modal-tab-card"><span class="icon">📊</span><h4>Dashboard</h4><p>Visão automática do mês: renda, despesas, investido e património líquido — comparado sozinho com a regra 50/30/20, com alertas quando algo foge do combinado.</p></div>
-        <div class="modal-tab-card"><span class="icon">💰</span><h4>Rendimentos</h4><p>Registre salário, freelas e qualquer entrada. O total do mês e o histórico completo ficam sempre à vista.</p></div>
-        <div class="modal-tab-card"><span class="icon">🧾</span><h4>Despesas</h4><p>Por categoria, fixa ou variável, com orçamento mensal por categoria — o painel avisa quando você passa do combinado.</p></div>
-        <div class="modal-tab-card"><span class="icon">💳</span><h4>Cartões</h4><p>Cadastre o cartão uma vez; a fatura se atualiza sozinha a cada compra lançada, com limite e vencimento sempre visíveis.</p></div>
-        <div class="modal-tab-card"><span class="icon">📉</span><h4>Dívidas</h4><p>Financiamentos e parcelamentos, parcela por parcela, com o que já foi pago e o que falta — inclusive dívidas antigas de qualquer lugar.</p></div>
-        <div class="modal-tab-card"><span class="icon">📈</span><h4>Investimentos</h4><p>Uma conta por aplicação — mesmo em bancos e plataformas diferentes. Atualize o saldo real de vez em quando e o rendimento é calculado sozinho.</p></div>
-        <div class="modal-tab-card"><span class="icon">🔮</span><h4>Projeções</h4><p>Simulação interativa com sliders: aporte mensal, aporte extra e CDI ajustável — veja em gráfico quanto seu dinheiro pode render.</p></div>
-        <div class="modal-tab-card"><span class="icon">🎯</span><h4>Metas</h4><p>De reserva de emergência a viagem dos sonhos — com progresso automático puxado direto das suas contas de investimento.</p></div>
-        <div class="modal-tab-card"><span class="icon">🔎</span><h4>Análises</h4><p>Mais de 8 gráficos interativos: evolução de gastos, investimentos, renda, taxa de poupança, composição da carteira e maiores gastos do mês.</p></div>
-        <div class="modal-tab-card"><span class="icon">🎓</span><h4>Educação</h4><p>Selic e CDI atualizados em tempo real, dica financeira do dia e um guia completo — da regra 50/30/20 aos erros mais comuns de quem está começando.</p></div>
-      </div>
-
-      <div class="modal-section-title">E ainda vem com</div>
-      <div class="modal-specs badges-row light">
-        <span class="badge-chip"><span class="ic">🎮</span> Conquistas desbloqueadas automaticamente</span>
-        <span class="badge-chip"><span class="ic">🔔</span> Central de Alertas centralizada</span>
-        <span class="badge-chip"><span class="ic">🌗</span> Modo claro/escuro</span>
-        <span class="badge-chip"><span class="ic">💾</span> Backup exportável e importável (JSON)</span>
-        <span class="badge-chip"><span class="ic">📑</span> Exportação para Excel (CSV)</span>
-        <span class="badge-chip"><span class="ic">🖨️</span> Relatório mensal em PDF</span>
-        <span class="badge-chip"><span class="ic">🧪</span> Dados de exemplo pra testar antes de usar os seus</span>
-        <span class="badge-chip"><span class="ic">👋</span> Tutorial de boas-vindas guiado em 5 passos</span>
-      </div>
-
-      <div class="modal-section-title">Ficha técnica</div>
-      <div class="modal-specs badges-row light">
-        <span class="badge-chip"><span class="ic">🔒</span> Dados 100% locais, nunca enviados a servidor</span>
-        <span class="badge-chip"><span class="ic">📴</span> Funciona offline</span>
-        <span class="badge-chip"><span class="ic">📱</span> Desktop e celular</span>
-        <span class="badge-chip"><span class="ic">💳</span> Pagamento único, sem mensalidade</span>
-        <span class="badge-chip"><span class="ic">🔑</span> Acesso por login, seu para sempre</span>
-      </div>
-
-      <div class="modal-cta">
-        <a class="product-buy-btn" href="#" id="buyLinkDetalhes" style="flex:1; min-width:200px;">Comprar agora →</a>
-        <span style="font-size:12px; color:var(--text-soft);">Pix ou cartão, via checkout seguro.</span>
-      </div>
-    </div>
-  </section>
-
-<section id="testemunho">
+  <section id="testemunho">
     <div class="wrap">
       <div class="testimonial-wrap">
         <div class="testimonial-avatar">YS</div>
@@ -619,44 +566,32 @@
     </div>
   </section>
 
-<section id="o-que-recebe" style="background:var(--surface-2);">
+  <section id="como-funciona" style="background:var(--surface-2);">
     <div class="wrap">
-      <div class="section-eyebrow">Pagamento único</div>
-      <h2 class="section-title">Tudo isso incluído na compra</h2>
-      <p class="section-lead">Um pagamento, sem mensalidade — e nada disso é vendido separado depois.</p>
-      <div class="checklist-wrap">
-        <div class="checklist-head">
-          <div style="font-size:13.5px; font-weight:600; color:var(--text-soft);">Resumo do que você leva</div>
-          <span class="checklist-count">15 itens incluídos</span>
+      <div class="section-eyebrow">Como funciona</div>
+      <h2 class="section-title">Em 3 passos, você já está usando</h2>
+      <div class="steps" id="stepsWrap">
+        <div class="steps-track"><div class="steps-track-fill" id="stepsTrackFill"></div></div>
+        <div class="step" data-step="1">
+          <div class="step-num">01</div>
+          <h3>Compre com segurança</h3>
+          <p>Finalize a compra pelo checkout — Pix ou cartão. Você recebe o acesso na hora.</p>
         </div>
-        <div class="checklist-table">
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Dashboard financeira</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Controle de rendimentos</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Controle de despesas</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Cartões</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Dívidas</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Investimentos</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Metas</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Projeções</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Alertas inteligentes</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Análises financeiras</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Relatórios</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Educação financeira</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Backup dos dados</span></div>
-          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Atualizações</span></div>
-          <div class="check-item highlight"><span class="check-mark">✓</span><span class="check-label">Suporte personalizado<span class="check-sub">Após a compra, por tempo indeterminado</span></span></div>
+        <div class="step" data-step="2">
+          <div class="step-num">02</div>
+          <h3>Abra o link</h3>
+          <p>Sem instalar nada. Funciona direto no navegador, no computador ou no celular.</p>
         </div>
-      </div>
-      <div class="support-note">
-        <p>Você é nosso cliente e, acima de tudo, queremos estar ao seu lado para ajudar no que for necessário — o suporte não tem prazo de validade. Prazo de análise: até 72 horas; em boa parte dos casos, conseguimos responder em até 24 horas.</p>
+        <div class="step" data-step="3">
+          <div class="step-num">03</div>
+          <h3>Comece a registrar</h3>
+          <p>Renda, despesas, cartões — em minutos você já vê o panorama completo das suas finanças.</p>
+        </div>
       </div>
     </div>
   </section>
-</div>
 
-
-<div class="tab-panel" id="tab-recursos">
-<section id="recursos">
+  <section id="recursos">
     <div class="wrap">
       <div class="section-eyebrow">Recursos</div>
       <h2 class="section-title">Feito para quem quer clareza, não complicação</h2>
@@ -664,78 +599,79 @@
         <div class="feature-card"><div class="feature-icon" style="background:var(--accent3-bg); color:var(--accent3);">🗂️</div><h3>Tudo num só lugar</h3><p>Junte conta de banco, investimento, financiamento, cartão e dívida antiga — não importa onde cada coisa está hoje: aqui elas se juntam numa visão só, para você parar de adivinhar o tamanho da sua vida financeira.</p></div>
         <div class="feature-card"><div class="feature-icon" style="background:var(--accent2-bg); color:var(--accent2);">📊</div><h3>Dashboard automático</h3><p>Renda, despesas, investido e património líquido, atualizados sozinhos a cada lançamento — para você ver o retrato real do mês sem montar planilha nenhuma.</p></div>
         <div class="feature-card"><div class="feature-icon" style="background:var(--amber-bg); color:var(--amber);">🧾</div><h3>Despesas</h3><p>Registre e organize os seus gastos por categoria para entender para onde o seu dinheiro está indo e identificar onde pode melhorar.</p></div>
+        <div class="feature-card"><div class="feature-icon" style="background:var(--accent2-bg); color:var(--accent2);">⚡</div><h3>Despesa Rápida</h3><p>Escolha a categoria, informe o valor e pronto — registre um gasto do dia a dia em poucos segundos, sem formulário longo.</p></div>
         <div class="feature-card"><div class="feature-icon" style="background:var(--amber-bg); color:var(--amber);">💳</div><h3>Cartões organizados</h3><p>Lance as compras do cartão, acompanhe o limite disponível e pague parcial ou total — sem surpresa quando a fatura chega.</p></div>
         <div class="feature-card"><div class="feature-icon" style="background:var(--accent3-bg); color:var(--accent3);">📉</div><h3>Dívidas sob controle</h3><p>Acompanhe cada dívida parcela por parcela, com alerta de atraso e dicas de recuperação, para saber exatamente quando ela termina.</p></div>
         <div class="feature-card"><div class="feature-icon" style="background:var(--moss-bg); color:var(--moss);">📈</div><h3>Investimentos reais</h3><p>Registre aportes e saldo por conta — o rendimento é calculado sozinho, em R$ e % ao mês, para você ver o seu dinheiro trabalhando de verdade.</p></div>
         <div class="feature-card"><div class="feature-icon" style="background:var(--accent2-bg); color:var(--accent2);">🎯</div><h3>Metas financeiras</h3><p>De reserva de emergência a viagem — acompanhe o progresso automático de cada meta, puxado direto das suas contas de investimento.</p></div>
         <div class="feature-card"><div class="feature-icon" style="background:var(--amber-bg); color:var(--amber);">🧠</div><h3>Dicas personalizadas</h3><p>O painel analisa os seus próprios números e sugere onde economizar — conselhos baseados na sua realidade, não em médias genéricas.</p></div>
-        <div class="feature-card"><div class="feature-icon" style="background:var(--accent2-bg); color:var(--accent2);">🔔</div><h3>Central de Alertas</h3><p>Um só lugar para ver tudo o que a Bússola identificou nos seus dados — saldo, fatura alta, dívida atrasada, orçamento estourado — sem precisar caçar informação pelo painel.</p></div>
-        <div class="feature-card"><div class="feature-icon" style="background:var(--accent3-bg); color:var(--accent3);">🩺</div><h3>Diagnóstico financeiro</h3><p>Uma avaliação automática, feita a partir dos seus próprios números — não é genérico. Quanto mais meses de histórico, mais preciso ele fica.</p></div>
-        <div class="feature-card"><div class="feature-icon" style="background:var(--moss-bg); color:var(--moss);">👨‍👩‍👧</div><h3>Controle por membro da família</h3><p>Marque rendimentos e despesas por membro e veja o gasto de cada um separadamente — útil para quem organiza as finanças em casal ou em família.</p></div>
-        <div class="feature-card"><div class="feature-icon" style="background:var(--amber-bg); color:var(--amber);">🏆</div><h3>Conquistas</h3><p>Marcos desbloqueados automaticamente conforme você usa a Bússola — primeiro mês registrado, primeira meta, primeiro investimento — um acompanhamento visual do seu progresso.</p></div>
       </div>
     </div>
   </section>
 
-<section id="despesa-rapida" style="padding-top:0;">
+  <section id="chatbot" style="padding-top:0;">
     <div class="wrap">
       <div class="quickexpense-wrap">
         <div>
-          <div class="section-eyebrow">Despesa Rápida</div>
-          <h3>O segredo não é deixar de gastar. É não deixar de registrar.</h3>
-          <p>Sabemos que anotar cada despesa ao longo do dia pode ser cansativo — na padaria, no supermercado, no café, no transporte, numa compra rápida. Muita gente acaba deixando passar simplesmente porque é trabalhoso parar para preencher várias informações.</p>
-          <p>Por isso a Bússola tem a <strong>Despesa Rápida</strong>: escolha a categoria, informe o valor e pronto. O objetivo é levar poucos segundos — menos de 4, quando você já sabe a categoria e o valor — em vez de um formulário longo. (O tempo real pode variar um pouco conforme o seu aparelho.)</p>
-          <p class="quickexpense-highlight">Depois de registrado, o resto é com a Bússola: cada lançamento vira gráfico, indicador, alerta, dica personalizada e comparação — sem esforço extra da sua parte.</p>
+          <div class="section-eyebrow">Chatbot</div>
+          <h3>Converse com a Bússola sobre as suas próprias finanças</h3>
+          <p>Em vez de caçar números entre abas e gráficos, é só perguntar. O chatbot dentro do painel responde com base nos seus dados reais — quanto você gastou com determinada categoria, como está a sua reserva de emergência, se o mês fechou no azul.</p>
+          <p>Ele também ajuda a navegar o próprio painel: explica o que cada aba faz, tira dúvidas sobre como um número é calculado e sugere o próximo passo, direto na conversa, sem sair da tela.</p>
+          <p class="quickexpense-highlight">É como ter alguém que conhece as suas finanças de verdade — porque só usa os dados que você mesmo registrou.</p>
         </div>
         <div class="quickexpense-demo">
-          <div class="qe-row"><span>Categoria</span><b>Alimentação</b></div>
-          <div class="qe-row"><span>Valor</span><b>R$ 18,50</b></div>
-          <div class="qe-row"><span>Status</span><b>Registrado ✓</b></div>
-          <span class="quickexpense-timer">⚡ Poucos toques, sem formulário longo</span>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-
-<div class="tab-panel" id="tab-como-funciona">
-<section id="como-funciona" style="background:var(--surface-2);">
-    <div class="wrap">
-      <div class="section-eyebrow">Como funciona</div>
-      <h2 class="section-title">Em 4 passos, você já está usando</h2>
-      <div class="steps" id="stepsWrap">
-        <div class="steps-track"><div class="steps-track-fill" id="stepsTrackFill"></div></div>
-        <div class="step" data-step="1">
-          <div class="step-num">01</div>
-          <h3>Compre com segurança</h3>
-          <p>Finalize a compra pelo checkout — Pix ou cartão. O acesso é liberado assim que o pagamento é confirmado.</p>
-        </div>
-        <div class="step" data-step="2">
-          <div class="step-num">02</div>
-          <h3>Crie o seu acesso</h3>
-          <p>Defina um e-mail e uma senha para entrar na sua Bússola. É esse login que dá acesso ao painel — os seus lançamentos financeiros continuam só no seu navegador.</p>
-        </div>
-        <div class="step" data-step="3">
-          <div class="step-num">03</div>
-          <h3>Siga a apresentação guiada</h3>
-          <p>Um onboarding rápido em 5 passos (Receitas, Despesas, Investimentos, Metas, Património) te mostra por onde começar — leva menos de 2 minutos.</p>
-        </div>
-        <div class="step" data-step="4">
-          <div class="step-num">04</div>
-          <h3>Comece a registrar</h3>
-          <p>Renda, despesas, cartões — em minutos você já vê o panorama completo das suas finanças, no computador ou no celular.</p>
+          <div class="qe-row"><span>Você</span><b>Quanto gastei com alimentação esse mês?</b></div>
+          <div class="qe-row"><span>Bússola</span><b>R$ 420,00 — 18% acima da sua média</b></div>
+          <span class="quickexpense-timer">💬 Respostas com base nos seus próprios registros</span>
         </div>
       </div>
     </div>
   </section>
 
-<section id="dicas">
+  <section id="o-que-recebe" style="background:var(--surface-2);">
     <div class="wrap">
-      <div class="section-intro-center">
+      <div class="section-eyebrow">Pagamento único</div>
+      <h2 class="section-title">Tudo isso incluído na compra:</h2>
+      <p class="section-lead">Um pagamento, sem mensalidade — e nada disso é vendido separado depois.</p>
+      <div class="checklist-wrap">
+        <div class="checklist-head">
+          <div style="font-size:13.5px; font-weight:600; color:var(--text-soft);">Resumo do que você leva</div>
+          <span class="checklist-count">19 itens incluídos</span>
+        </div>
+        <div class="checklist-table">
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Dashboard financeira</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Controle de despesas</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Despesa rápida para registrar gastos em poucos segundos</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Controle de dívidas</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Controle de rendimentos</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Controle de todos os seus cartões de crédito</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Controle de todos os seus investimentos</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Projeções futuras configuráveis manualmente ou com base nas suas médias atuais</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Análises financeiras completas consoante os seus registros</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Educação financeira</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Metas mensais e anuais</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Alertas inteligentes sobre as suas despesas, dívidas, cartões e investimentos</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Dicas personalizadas consoante os seus próprios registros</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Relatórios financeiros mensais</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Backup de todos os dados registrados</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Exportação dos dados</span></div>
+          <div class="check-item"><span class="check-mark">✓</span><span class="check-label">Atualizações do documento</span></div>
+          <div class="check-item highlight"><span class="check-mark">✓</span><span class="check-label">Suporte ao cliente<span class="check-sub">Após a compra, por tempo indeterminado</span></span></div>
+          <div class="check-item highlight"><span class="check-mark">✓</span><span class="check-label">Chat exclusivo dentro do software e experiência personalizada</span></div>
+        </div>
+      </div>
+      <div class="support-note">
+        <p>Você é nosso cliente e, acima de tudo, queremos estar ao seu lado para ajudar no que for necessário — o suporte não tem prazo de validade. Prazo de análise: até 72 horas; em boa parte dos casos, conseguimos responder em até 24 horas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dicas">
+    <div class="wrap">
+      <div class="section-intro-center" style="max-width:980px;">
         <div class="section-eyebrow">Antes de começar</div>
-        <h2 class="section-title">A ferramenta é só o meio. A mudança de chave é o que importa.</h2>
-        <p class="section-lead">Isso aqui não é sobre ter um painel bonito. É sobre parar de reagir ao dinheiro e passar a comandá-lo. Três coisas importam de verdade: <strong>controlar receitas e despesas</strong>, <strong>investir a partir do zero</strong> e cuidar da sua <strong>saúde financeira — que no fundo também é saúde psicológica</strong>. Você é a sua própria empresa, e toda empresa séria tem um painel de controle. Algumas dicas para usar bem desde o primeiro dia:</p>
+        <h2 class="section-title" style="font-size:27px; white-space:normal;">A ferramenta é só o meio. A mudança de chave é o que importa.</h2>
+        <p class="section-lead">Isso aqui não é sobre ter um painel bonito — é sobre parar de reagir ao dinheiro e passar a comandá-lo. Três coisas importam de verdade: <strong>controlar receitas e despesas</strong>, <strong>investir a partir do zero</strong> e cuidar da sua <strong>saúde financeira</strong>. Você é a sua própria empresa, e toda empresa séria tem um painel de controle.</p>
       </div>
       <div class="tips-grid">
         <div class="tip-card"><span class="tip-num">01</span><div class="tip-tag" style="color:var(--accent2);">Receitas e despesas</div><h3>Registre tudo por 30 dias antes de cortar qualquer coisa</h3><p>Você não consegue melhorar o que não mede. No primeiro mês, o objetivo é só um: ver a realidade completa, sem julgar.</p></div>
@@ -748,51 +684,30 @@
       <p class="tips-closing">Você não está comprando apenas uma ferramenta. Está adquirindo uma nova forma de enxergar, organizar e construir o seu patrimônio.</p>
     </div>
   </section>
-</div>
 
-
-<div class="tab-panel" id="tab-suporte">
-<section id="suporte-principal">
+  <section id="comunidade" style="background:var(--surface-2);">
     <div class="wrap">
-      <div class="section-intro-center">
-        <div class="section-eyebrow">Chat & Suporte</div>
-        <h2 class="section-title">Você nunca fica sozinho depois de comprar</h2>
-        <p class="section-lead">Suporte por tempo indeterminado, mais uma central de ajuda dentro do próprio painel — e chat integrado para tirar dúvidas na hora.</p>
+      <div class="section-intro-center" style="max-width:980px;">
+        <div class="section-eyebrow">De onde vem a confiança</div>
+        <h2 class="section-title" style="font-size:27px; white-space:normal;">10 anos criando sistemas de gestão para operações reais</h2>
+        <p class="section-lead">A Bússola Financeira YS não é o meu primeiro painel. Antes dela, passei 10 anos desenhando ferramentas de gestão usadas de verdade, todos os dias — e trouxe esse mesmo cuidado para as suas finanças.</p>
       </div>
-      <div class="mission-grid">
-        <div class="mission-card">
-          <div class="tag">E-mail</div>
-          <h3>Suporte por e-mail</h3>
-          <p>Escreva para <a href="mailto:suporte@bussolafinanceirays.com" style="color:var(--accent2); font-weight:600;">suporte@bussolafinanceirays.com</a> a qualquer momento. Prazo de análise: até 72 horas — em boa parte dos casos, respondemos em até 24 horas.</p>
-        </div>
-        <div class="mission-card">
-          <div class="tag">Dentro do painel</div>
-          <h3>Central de Ajuda</h3>
-          <p>Dezenas de respostas sobre como cada número é calculado — património líquido, rendimento, orçamento, metas — sempre à mão pelo ícone de ajuda, sem precisar sair da tela ou esperar resposta.</p>
-        </div>
-        <div class="mission-card">
-          <div class="tag">Chat</div>
-          <h3>Chat integrado</h3>
-          <p>Um chat dentro do próprio painel, para tirar dúvidas rápidas na hora — complementando o suporte por e-mail, não substituindo o cuidado pessoal que já existe hoje.</p>
-        </div>
-      </div>
-      <div class="support-note" style="margin-top:24px; max-width:640px;">
-        <p>Você é nosso cliente e, acima de tudo, queremos estar ao seu lado para ajudar no que for necessário — o suporte não tem prazo de validade.</p>
+      <div class="proof-grid" id="proofGrid">
+        <div class="proof-card"><div class="num" data-target="10" data-suffix=" anos">0</div><div class="lbl">criando sistemas de gestão e automação para operações do dia a dia</div></div>
+        <div class="proof-card"><div class="num" data-target="100" data-suffix="%">0</div><div class="lbl">do produto testado e usado por mim mesmo, mês após mês, antes de ser vendido</div></div>
+        <div class="proof-card"><div class="num" data-target="0" data-suffix="">0</div><div class="lbl">dados enviados a servidores — sua privacidade não depende de confiar em promessa nenhuma, é assim que o produto foi construído</div></div>
       </div>
     </div>
   </section>
-</div>
 
-
-<div class="tab-panel" id="tab-seguranca">
-<section id="privacidade">
+  <section id="privacidade">
     <div class="wrap">
       <div class="section-intro-center">
         <div class="section-eyebrow">Privacidade e dados</div>
         <h2 class="section-title">Os seus números continuam seus</h2>
         <p class="section-lead">A Bússola foi desenhada para que a sua privacidade não dependa de uma promessa nossa — depende de como o produto foi construído.</p>
       </div>
-      <div class="mission-grid cols-4">
+      <div class="mission-grid">
         <div class="mission-card">
           <div class="tag">Armazenamento</div>
           <h3>Tudo fica no seu navegador</h3>
@@ -808,16 +723,12 @@
           <h3>Backup e portabilidade nas suas mãos</h3>
           <p>Você pode exportar um backup (JSON) e importar quando quiser — inclusive ao trocar de aparelho. Como os dados vivem no seu navegador, apagá-los ou limpar o cache também apaga o histórico local, por isso o backup é recomendado.</p>
         </div>
-                <div class="mission-card">
-          <div class="tag">Login e acesso</div>
-          <h3>O login é só a chave da porta</h3>
-          <p>O e-mail e a senha que você cria servem apenas para confirmar o seu acesso após a compra. Os seus lançamentos financeiros — renda, despesas, cartões, investimentos — continuam salvos exclusivamente no seu navegador, nunca no servidor de login.</p>
-        </div>
       </div>
+      <p style="font-size:12.8px; color:var(--text-soft); margin-top:24px;">Para o texto completo sobre uso do produto, consulte os nossos <a href="#termos" style="color:var(--accent2); font-weight:600;">Termos de Uso</a>, logo abaixo.</p>
     </div>
   </section>
 
-  <section id="termos-de-uso" style="background:var(--surface-2);">
+  <section id="termos" style="background:var(--surface-2);">
     <div class="wrap">
       <div class="section-eyebrow">Termos de Uso</div>
       <h2 class="section-title">Condições de uso da Bússola Financeira YS</h2>
@@ -825,12 +736,12 @@
         <div class="mission-card">
           <div class="tag">Licença</div>
           <h3>Uso pessoal, produto original</h3>
-          <p>A Bússola Financeira YS é licenciada para uso pessoal do comprador. A compra dá acesso por login (e-mail e senha) ao painel completo, sem versão limitada.</p>
+          <p>A Bússola Financeira YS é licenciada para uso pessoal do comprador. A compra dá acesso ao painel completo, sem versão limitada.</p>
         </div>
         <div class="mission-card">
           <div class="tag">Pagamento</div>
           <h3>Pagamento único, sem mensalidade</h3>
-          <p>O valor de R$ 149,90 é cobrado uma única vez, via Pix ou cartão, através de checkout seguro. Não há cobrança recorrente. As atualizações do produto estão incluídas.</p>
+          <p>O valor é cobrado uma única vez, via Pix ou cartão, através de checkout seguro. Não há cobrança recorrente. As atualizações do produto estão incluídas.</p>
         </div>
         <div class="mission-card">
           <div class="tag">Responsabilidade</div>
@@ -840,17 +751,14 @@
         <div class="mission-card">
           <div class="tag">Suporte e dados</div>
           <h3>Suporte incluso, dados sob sua guarda</h3>
-          <p>O suporte por e-mail e chat integrado está incluso, por tempo indeterminado. Os seus dados financeiros ficam salvos apenas no seu navegador — a guarda do backup é de sua responsabilidade.</p>
+          <p>O suporte por e-mail e o chat integrado estão inclusos, por tempo indeterminado. Os seus dados financeiros ficam salvos apenas no seu navegador — a guarda do backup é de sua responsabilidade.</p>
         </div>
       </div>
       <p style="font-size:12.8px; color:var(--text-soft); margin-top:24px;">Dúvidas sobre estas condições? Escreva para <a href="mailto:suporte@bussolafinanceirays.com" style="color:var(--accent2); font-weight:600;">suporte@bussolafinanceirays.com</a>.</p>
     </div>
   </section>
-</div>
 
-
-<div class="tab-panel" id="tab-faq">
-<section id="faq" style="background:var(--surface-2);">
+  <section id="faq" style="background:var(--surface-2);">
     <div class="wrap">
       <div class="section-eyebrow">Dúvidas frequentes</div>
       <h2 class="section-title">Antes de comprar</h2>
@@ -865,7 +773,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-q">O que eu recebo exatamente depois de comprar?<span class="plus">+</span></button>
-          <div class="faq-a"><p>O seu login de acesso ao painel completo, com as 10 abas descritas nesta página (dashboard, rendimentos, despesas, cartões, dívidas, investimentos, projeções, metas, análises e educação financeira), pronto para usar — sem versão limitada e sem funcionalidade bloqueada.</p></div>
+          <div class="faq-a"><p>O link de acesso ao painel completo, com as 10 abas descritas nesta página (dashboard, rendimentos, despesas, cartões, dívidas, investimentos, projeções, metas, análises e educação financeira), pronto para usar — sem versão limitada e sem funcionalidade bloqueada.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Como e onde os meus dados ficam armazenados?<span class="plus">+</span></button>
@@ -909,7 +817,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-q">O que é a Despesa Rápida?<span class="plus">+</span></button>
-          <div class="faq-a"><p>É a forma mais direta de registrar um gasto do dia a dia: você escolhe a categoria, informa o valor e pronto — pensada para levar poucos segundos quando você já sabe os dois dados, em vez de preencher um formulário longo. Veja mais detalhes na seção "Despesa Rápida" desta página.</p></div>
+          <div class="faq-a"><p>É a forma mais direta de registrar um gasto do dia a dia: você escolhe a categoria, informa o valor e pronto — pensada para levar poucos segundos quando você já sabe os dois dados, em vez de preencher um formulário longo.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Existe cancelamento, reembolso ou alguma condição especial?<span class="plus">+</span></button>
@@ -917,107 +825,25 @@
         </div>
         <div class="faq-item">
           <button class="faq-q">Preciso saber de finanças ou instalar algum programa para usar?<span class="plus">+</span></button>
-          <div class="faq-a"><p>Não precisa instalar nada — você acessa pelo navegador (Chrome, Safari, o que você já usa) com o login que criar após a compra — e não precisa de conhecimento prévio em finanças. O painel foi pensado para quem está começando a organizar a vida financeira agora.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Preciso criar uma conta para usar?<span class="plus">+</span></button>
-          <div class="faq-a"><p>Sim — depois de comprar, você cria o seu acesso com e-mail e senha. Esse login apenas confirma que você é assinante; os seus lançamentos financeiros continuam salvos só no seu navegador, nunca no servidor de login.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Existe chat de suporte?<span class="plus">+</span></button>
-          <div class="faq-a"><p>Sim — além do e-mail suporte@bussolafinanceirays.com (resposta em até 72 horas, normalmente até 24h), a Bússola conta com um chat integrado ao painel para tirar dúvidas rápidas sem sair da tela.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">O painel tem uma ajuda embutida, além do e-mail?<span class="plus">+</span></button>
-          <div class="faq-a"><p>Sim — dentro do próprio painel há uma Central de Ajuda com dezenas de respostas sobre como cada cálculo funciona (património líquido, rendimento, orçamento, metas etc.), disponível a qualquer momento pelo ícone de ajuda no topo.</p></div>
+          <div class="faq-a"><p>Não precisa instalar nada — é só abrir o link no navegador (Chrome, Safari, o que você já usa) — e não precisa de conhecimento prévio em finanças. O painel foi pensado para quem está começando a organizar a vida financeira agora.</p></div>
         </div>
       </div>
     </div>
   </section>
-</div>
 
-
-<div class="tab-panel" id="tab-missao">
-<section id="missao">
-    <div class="wrap">
-      <div class="section-intro-center">
-        <div class="section-eyebrow">Por que a Bússola existe</div>
-        <h2 class="section-title">Um painel para você parar de administrar a vida financeira no escuro</h2>
-        <p class="mission-lead">A <strong>Bússola Financeira YS</strong> nasceu de uma necessidade bem prática: organizar renda, gastos, cartões, dívidas e investimentos num único lugar, sem depender de anotações soltas, papel ou aplicativo que vende seus dados. Ela é o primeiro produto de uma coleção que está apenas começando — pensado para quem quer parar de adiar o controle financeiro e passar a agir, todos os meses, com números reais na frente.</p>
-      </div>
-
-      <div class="mission-grid">
-        <div class="mission-card">
-          <div class="tag">O que existe hoje</div>
-          <h3>Bússola Financeira YS</h3>
-          <p>Um painel único e completo: dashboard automático, receitas, despesas, cartões, dívidas, investimentos com rendimento real, projeções, metas e análises. Acesso pelo navegador com o seu login, sem instalar nada.</p>
-        </div>
-        <div class="mission-card">
-          <div class="tag">Nossa missão</div>
-          <h3>Autonomia financeira de verdade</h3>
-          <p>Acreditamos que ninguém deveria depender de terceiros — nem de métodos complicados — para saber para onde vai o próprio dinheiro. A missão é simples: dar clareza e ferramenta prática para você decidir com informação, não no achismo.</p>
-        </div>
-        <div class="mission-card">
-          <div class="tag">O que queremos para você</div>
-          <h3>Que você retome o controle</h3>
-          <p>Que em 30 dias você saiba exatamente onde está o seu dinheiro. Em 90 dias, que você já tenha começado a investir com regularidade. E que, daqui a um ano, controlar as suas finanças seja um hábito — não uma tarefa que te dá ansiedade.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-<section id="comunidade" style="background:var(--surface-2);">
-    <div class="wrap">
-      <div class="section-intro-center">
-        <div class="section-eyebrow">De onde vem a confiança</div>
-        <h2 class="section-title">10 anos criando sistemas de gestão para operações reais</h2>
-        <p class="section-lead">A Bússola Financeira YS não é o meu primeiro painel. Antes dela, passei 10 anos desenhando ferramentas de gestão usadas de verdade, todos os dias — e trouxe esse mesmo cuidado para as suas finanças.</p>
-      </div>
-      <div class="proof-grid" id="proofGrid">
-        <div class="proof-card"><div class="num" data-target="10" data-suffix=" anos">0</div><div class="lbl">criando sistemas de gestão e automação para operações do dia a dia</div></div>
-        <div class="proof-card"><div class="num" data-target="100" data-suffix="%">0</div><div class="lbl">do produto testado e usado por mim mesmo, mês após mês, antes de ser vendido</div></div>
-        <div class="proof-card"><div class="num" data-target="0" data-suffix="">0</div><div class="lbl">dados enviados a servidores — sua privacidade não depende de confiar em promessa nenhuma, é assim que o produto foi construído</div></div>
-      </div>
-    </div>
-  </section>
-
-<section id="roadmap">
-    <div class="wrap">
-      <div class="catalog-more">
-        <div class="lbl">🧭 Para onde vamos</div>
-        <h4>Mais produtos a caminho</h4>
-        <p>Hoje o nosso foco é ajudar pessoas físicas a encontrar o seu caminho financeiro, organizar melhor a sua vida e ter o suporte necessário para alcançar os seus objetivos. Ao mesmo tempo, já estamos trabalhando para ampliar aos poucos o ecossistema Bússola — sem prometer datas, apenas a direção:</p>
-        <ul>
-          <li>Soluções para quem tem um pequeno negócio</li>
-          <li>Ferramentas para médias empresas</li>
-          <li>Organização e gestão financeira de negócios</li>
-          <li>Softwares adaptados a diferentes necessidades</li>
-          <li>Suporte a outras moedas, como Euro e Dólar</li>
-          <li>Ferramentas cada vez mais personalizadas</li>
-        </ul>
-        <p class="contact-line">Dúvidas sobre a Bússola ou os nossos produtos atuais? Escreva para <a href="mailto:suporte@bussolafinanceirays.com">suporte@bussolafinanceirays.com</a>.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-
-<div class="tab-panel" id="tab-contato">
-<section id="contato">
+  <section id="contato">
     <div class="wrap">
       <div class="section-intro-center">
         <div class="section-eyebrow">Fale connosco</div>
         <h2 class="section-title">Dúvidas antes ou depois de comprar</h2>
         <p class="section-lead">O nosso e-mail está disponível para dúvidas relacionadas à Bússola e aos nossos produtos atuais. Prazo de análise: até 72 horas — em boa parte dos casos, respondemos em até 24 horas.</p>
       </div>
-      <div class="manifesto" style="max-width:640px; margin:0 auto;">
-        <div class="lbl">✉️ Contacto</div>
+      <div class="manifesto" style="max-width:640px; margin:0 auto; text-align:center;">
+        <div class="lbl" style="justify-content:center;">✉️ Contacto</div>
         <p><a href="mailto:suporte@bussolafinanceirays.com" style="color:#9FE6D8; font-weight:700; text-decoration:none;">suporte@bussolafinanceirays.com</a><br>Atendimento focado em dúvidas sobre o uso da Bússola, pagamento e suporte técnico. Não substitui aconselhamento financeiro profissional.</p>
       </div>
     </div>
   </section>
-</div>
 
 </main>
 
@@ -1032,15 +858,13 @@
         </div>
       </div>
       <div class="footer-links">
-        <a href="#" data-goto-tab="bussola">A Bússola</a>
-        <a href="#" data-goto-tab="recursos">Recursos</a>
-        <a href="#" data-goto-tab="como-funciona">Como funciona</a>
-        <a href="#" data-goto-tab="suporte">Chat &amp; Suporte</a>
-        <a href="#" data-goto-tab="seguranca">Segurança</a>
-        <a href="#" data-goto-tab="seguranca">Termos de uso</a>
-        <a href="#" data-goto-tab="faq">FAQ</a>
-        <a href="#" data-goto-tab="missao">Nossa Missão</a>
-        <a href="#" data-goto-tab="contato">Fale connosco</a>
+        <a href="#produto">Produto</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#missao">Missão</a>
+        <a href="#privacidade">Privacidade</a>
+        <a href="#termos">Termos de uso</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Fale connosco</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1049,6 +873,59 @@
     </div>
   </div>
 </footer>
+
+<div class="modal-overlay" id="productModal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div>
+        <h3>Bússola Financeira YS</h3>
+        <p>Veja o que você recebe ao comprar — sem letras miúdas.</p>
+      </div>
+      <button class="modal-close" id="closeProductModal" type="button" aria-label="Fechar">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section-title">O que você recebe ao comprar</div>
+      <p style="font-size:13.5px; color:var(--text-soft); line-height:1.6; margin:0 0 16px;">Um painel completo com <strong>10 abas</strong>, prontas pra usar no minuto em que você abre o arquivo. Nada de versão limitada — é exatamente o que está nas telas acima, com o seu nome no topo.</p>
+      <div class="modal-tabs-grid">
+        <div class="modal-tab-card"><span class="icon">📊</span><h4>Dashboard</h4><p>Visão automática do mês: renda, despesas, investido e património líquido — comparado sozinho com a regra 50/30/20, com alertas quando algo foge do combinado.</p></div>
+        <div class="modal-tab-card"><span class="icon">💰</span><h4>Rendimentos</h4><p>Registre salário, freelas e qualquer entrada. O total do mês e o histórico completo ficam sempre à vista.</p></div>
+        <div class="modal-tab-card"><span class="icon">🧾</span><h4>Despesas</h4><p>Por categoria, fixa ou variável, com orçamento mensal por categoria — o painel avisa quando você passa do combinado.</p></div>
+        <div class="modal-tab-card"><span class="icon">💳</span><h4>Cartões</h4><p>Cadastre o cartão uma vez; a fatura se atualiza sozinha a cada compra lançada, com limite e vencimento sempre visíveis.</p></div>
+        <div class="modal-tab-card"><span class="icon">📉</span><h4>Dívidas</h4><p>Financiamentos e parcelamentos, parcela por parcela, com o que já foi pago e o que falta — inclusive dívidas antigas de qualquer lugar.</p></div>
+        <div class="modal-tab-card"><span class="icon">📈</span><h4>Investimentos</h4><p>Uma conta por aplicação — mesmo em bancos e plataformas diferentes. Atualize o saldo real de vez em quando e o rendimento é calculado sozinho.</p></div>
+        <div class="modal-tab-card"><span class="icon">🔮</span><h4>Projeções</h4><p>Simulação interativa com sliders: aporte mensal, aporte extra e CDI ajustável — veja em gráfico quanto seu dinheiro pode render.</p></div>
+        <div class="modal-tab-card"><span class="icon">🎯</span><h4>Metas</h4><p>De reserva de emergência a viagem dos sonhos — com progresso automático puxado direto das suas contas de investimento.</p></div>
+        <div class="modal-tab-card"><span class="icon">🔎</span><h4>Análises</h4><p>Mais de 8 gráficos interativos: evolução de gastos, investimentos, renda, taxa de poupança, composição da carteira e maiores gastos do mês.</p></div>
+        <div class="modal-tab-card"><span class="icon">🎓</span><h4>Educação</h4><p>Selic e CDI atualizados em tempo real, dica financeira do dia e um guia completo — da regra 50/30/20 aos erros mais comuns de quem está começando.</p></div>
+      </div>
+
+      <div class="modal-section-title">E ainda vem com</div>
+      <div class="modal-specs badges-row light">
+        <span class="badge-chip"><span class="ic">🔒</span> Trava por PIN de 4 dígitos</span>
+        <span class="badge-chip"><span class="ic">🌗</span> Modo claro/escuro</span>
+        <span class="badge-chip"><span class="ic">💾</span> Backup exportável e importável (JSON)</span>
+        <span class="badge-chip"><span class="ic">📑</span> Exportação para Excel (CSV)</span>
+        <span class="badge-chip"><span class="ic">🖨️</span> Relatório mensal em PDF</span>
+        <span class="badge-chip"><span class="ic">🧪</span> Dados de exemplo pra testar antes de usar os seus</span>
+        <span class="badge-chip"><span class="ic">👋</span> Tutorial de boas-vindas em 4 passos</span>
+      </div>
+
+      <div class="modal-section-title">Ficha técnica</div>
+      <div class="modal-specs badges-row light">
+        <span class="badge-chip"><span class="ic">🔒</span> Dados 100% locais, nunca enviados a servidor</span>
+        <span class="badge-chip"><span class="ic">📴</span> Funciona offline</span>
+        <span class="badge-chip"><span class="ic">📱</span> Desktop e celular</span>
+        <span class="badge-chip"><span class="ic">💳</span> Pagamento único, sem mensalidade</span>
+        <span class="badge-chip"><span class="ic">🧾</span> Arquivo único, seu para sempre</span>
+      </div>
+
+      <div class="modal-cta">
+        <a class="product-buy-btn" href="#" id="buyLinkModal" style="flex:1; min-width:200px;">Comprar agora →</a>
+        <span style="font-size:12px; color:var(--text-soft);">Pix ou cartão, via checkout seguro.</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="mobile-sticky-cta" id="mobileStickyCta">
   <div class="mobile-sticky-cta-info">
@@ -1377,11 +1254,67 @@
 
   // TODO: troque pelo link real de checkout da Kiwify quando o produto estiver criado
   var CHECKOUT_URL = "https://pay.kiwify.com.br/6e535Em?region=br";
-  document.querySelectorAll("#buyLink, #buyLinkIntro, #buyLinkDetalhes, #buyLinkSticky, .nav-cta, #navBuyBtn, .btn-primary-lg").forEach(function(el){
+  document.querySelectorAll("#buyLink, #buyLinkModal, #buyLinkSticky, .nav-cta, .btn-primary-lg").forEach(function(el){
     el.href = CHECKOUT_URL;
   });
 
-  // Destaque sequencial nas abas do painel, dentro de "A Bússola"
+  // Product details modal
+  var modal = document.getElementById("productModal");
+  var openBtn = document.getElementById("openProductModal");
+  var closeBtn = document.getElementById("closeProductModal");
+  var mainImg = document.getElementById("modalMainImg");
+  var caption = document.getElementById("modalCaption");
+  var thumbBtns = Array.prototype.slice.call(document.querySelectorAll(".modal-thumb"));
+  var galleryMain = document.querySelector(".modal-gallery-main");
+
+  // Bolinhas de progresso do carrossel automático de telas
+  var dotsWrap = null;
+  if(thumbBtns.length && caption){
+    dotsWrap = document.createElement("div");
+    dotsWrap.className = "modal-autoplay-dots";
+    thumbBtns.forEach(function(){
+      var d = document.createElement("span");
+      d.className = "modal-autoplay-dot";
+      dotsWrap.appendChild(d);
+    });
+    caption.insertAdjacentElement("afterend", dotsWrap);
+  }
+  var dotEls = dotsWrap ? Array.prototype.slice.call(dotsWrap.children) : [];
+
+  var thumbIdx = 0;
+  var galleryTimer = null;
+  var galleryHovering = false;
+
+  function activateThumb(i){
+    var btn = thumbBtns[i];
+    if(!btn) return;
+    thumbIdx = i;
+    thumbBtns.forEach(function(t){ t.classList.remove("active"); });
+    btn.classList.add("active");
+    dotEls.forEach(function(d, di){ d.classList.toggle("active", di === i); });
+    mainImg.style.opacity = "0";
+    setTimeout(function(){
+      mainImg.style.display = "block";
+      if(mainImg.nextElementSibling) mainImg.nextElementSibling.style.display = "none";
+      mainImg.src = btn.dataset.img;
+      caption.textContent = btn.dataset.caption;
+      mainImg.style.opacity = "1";
+    }, 150);
+  }
+
+  function startGalleryAutoplay(){
+    stopGalleryAutoplay();
+    if(!thumbBtns.length) return;
+    galleryTimer = setInterval(function(){
+      if(galleryHovering) return;
+      activateThumb((thumbIdx + 1) % thumbBtns.length);
+    }, 3200);
+  }
+  function stopGalleryAutoplay(){
+    if(galleryTimer){ clearInterval(galleryTimer); galleryTimer = null; }
+  }
+
+  // Destaque sequencial nas abas do painel, dentro do modal
   var modalTabCards = Array.prototype.slice.call(document.querySelectorAll(".modal-tab-card"));
   var tabHighlightTimer = null;
   var tabIdx = 0;
@@ -1399,49 +1332,36 @@
     modalTabCards.forEach(function(c){ c.classList.remove("is-live"); });
   }
 
-  // ===== Navegação por abas =====
-  (function tabSystem(){
-    var panels = Array.prototype.slice.call(document.querySelectorAll(".tab-panel"));
-    var tabBtns = Array.prototype.slice.call(document.querySelectorAll(".nav-tab"));
-    var validIds = tabBtns.map(function(b){ return b.getAttribute("data-tab"); });
-    var main = document.getElementById("mainContent");
-
-    function activate(id, opts){
-      opts = opts || {};
-      if(validIds.indexOf(id) === -1) id = "inicio";
-      panels.forEach(function(p){ p.classList.toggle("active", p.id === "tab-" + id); });
-      tabBtns.forEach(function(b){ b.classList.toggle("active", b.getAttribute("data-tab") === id); });
-      if(!opts.skipHash){
-        history.replaceState(null, "", "#" + id);
-      }
-      if(!opts.skipScroll && main){
-        try{ main.scrollIntoView({behavior: "smooth", block: "start"}); }catch(e){}
-      }
-      stopTabHighlight();
-      if(id === "bussola") startTabHighlight();
-    }
-
-    tabBtns.forEach(function(b){
-      b.addEventListener("click", function(){ activate(b.getAttribute("data-tab")); });
-    });
-    document.querySelectorAll("[data-goto-tab]").forEach(function(el){
-      el.addEventListener("click", function(e){
-        e.preventDefault();
-        activate(el.getAttribute("data-goto-tab"));
-      });
-    });
-
-    var initial = (location.hash || "#inicio").replace("#", "");
-    activate(initial, {skipHash: true, skipScroll: true});
-
-    window.__bussolaActivateTab = activate;
-  })();
-
+  function openModal(){
+    modal.classList.add("open");
+    document.body.classList.add("modal-lock");
+    activateThumb(0);
+    startGalleryAutoplay();
+    startTabHighlight();
+  }
+  function closeModal(){
+    modal.classList.remove("open");
+    document.body.classList.remove("modal-lock");
+    stopGalleryAutoplay();
+    stopTabHighlight();
+  }
+  if(openBtn) openBtn.addEventListener("click", openModal);
   var openVisual = document.getElementById("openProductModalVisual");
-  if(openVisual){
-    openVisual.addEventListener("click", function(){
-      if(window.__bussolaActivateTab) window.__bussolaActivateTab("bussola");
-    });
+  if(openVisual) openVisual.addEventListener("click", openModal);
+  if(closeBtn) closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeModal(); });
+
+  thumbBtns.forEach(function(btn, i){
+    btn.addEventListener("click", function(){ activateThumb(i); });
+  });
+  if(galleryMain){
+    galleryMain.addEventListener("mouseenter", function(){ galleryHovering = true; });
+    galleryMain.addEventListener("mouseleave", function(){ galleryHovering = false; });
+  }
+  if(dotsWrap){
+    dotsWrap.addEventListener("mouseenter", function(){ galleryHovering = true; });
+    dotsWrap.addEventListener("mouseleave", function(){ galleryHovering = false; });
   }
 
   document.querySelectorAll(".faq-q").forEach(function(btn){
