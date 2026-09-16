@@ -170,7 +170,7 @@
   .eyebrow-dot{ width:6px; height:6px; border-radius:50%; background:var(--accent2); animation:eyebrowPulse 1.8s ease-in-out infinite; box-shadow:0 0 0 0 rgba(14,156,140,0.6); flex-shrink:0; margin-top:5px; }
   @keyframes eyebrowPulse{ 0%,100%{ opacity:1; box-shadow:0 0 0 0 rgba(63,224,200,0.55);} 50%{ opacity:.55; box-shadow:0 0 0 5px rgba(63,224,200,0);} }
   .hero h1{ font-size:clamp(25px, 6.8vw, 35px); line-height:1.2; margin:0 0 16px; color:#F8F3E4; letter-spacing:-0.01em; }
-  .hero-title-shine{ display:inline-block; background:linear-gradient(100deg, #F8F3E4 0%, #F8F3E4 38%, #3FE0C8 48%, #D8CCFF 56%, #F8F3E4 66%, #F8F3E4 100%); background-size:280% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:heroTitleShine 5.5s ease-in-out infinite; }
+  .hero-title-shine{ display:inline-block; background:linear-gradient(100deg, #F8F3E4 0%, #F8F3E4 38%, #3FE0C8 48%, #D8CCFF 56%, #F8F3E4 66%, #F8F3E4 100%); background-size:280% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:heroTitleShine 5.5s linear infinite; }
   @keyframes heroTitleShine{ 0%{background-position:200% 0;} 100%{background-position:-80% 0;} }
   
   .hero p.lead{ font-size:15px; line-height:1.65; color:var(--on-dark-soft); max-width:490px; margin:0 0 26px; }
