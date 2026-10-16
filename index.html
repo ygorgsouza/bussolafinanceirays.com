@@ -170,8 +170,8 @@
   .eyebrow-dot{ width:6px; height:6px; border-radius:50%; background:var(--accent2); animation:eyebrowPulse 1.8s ease-in-out infinite; box-shadow:0 0 0 0 rgba(14,156,140,0.6); flex-shrink:0; margin-top:5px; }
   @keyframes eyebrowPulse{ 0%,100%{ opacity:1; box-shadow:0 0 0 0 rgba(63,224,200,0.55);} 50%{ opacity:.55; box-shadow:0 0 0 5px rgba(63,224,200,0);} }
   .hero h1{ font-size:clamp(25px, 6.8vw, 35px); line-height:1.2; margin:0 0 16px; color:#F8F3E4; letter-spacing:-0.01em; }
-  .hero-title-shine{ display:inline-block; background:linear-gradient(100deg, #F8F3E4 0%, #F8F3E4 38%, #3FE0C8 48%, #D8CCFF 56%, #F8F3E4 66%, #F8F3E4 100%); background-size:280% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:heroTitleShine 5.5s linear infinite; }
-  @keyframes heroTitleShine{ 0%{background-position:200% 0;} 100%{background-position:-80% 0;} }
+  .hero-title-shine{ display:inline; -webkit-box-decoration-break:clone; box-decoration-break:clone; background-image:linear-gradient(90deg, #F8F3E4 0%, #F8F3E4 34%, #CFF6EE 42%, #6FE8D4 48%, #3FE0C8 50%, #A9B8FF 54%, #D8CCFF 58%, #F8F3E4 66%, #F8F3E4 100%); background-repeat:no-repeat; background-size:300% 100%; background-position:100% 0; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; animation:heroTitleShine 7s infinite; }
+  @keyframes heroTitleShine{ 0%{ background-position:100% 0; animation-timing-function:cubic-bezier(.45,.05,.3,1); } 62%{ background-position:0% 0; } 100%{ background-position:0% 0; } }
   
   .hero p.lead{ font-size:15px; line-height:1.65; color:var(--on-dark-soft); max-width:490px; margin:0 0 26px; }
   @media (max-width:1024px){ .hero p.lead{margin-left:auto; margin-right:auto;} }
@@ -821,6 +821,12 @@
 
   #view-biblioteca .biblioteca-col-saving{ font-size:12.5px !important; line-height:1.5 !important; margin:8px 0 0 !important; color:var(--bib-gold) !important; }
 
+  .btn-biblioteca{ background:linear-gradient(135deg,#F3E9CF 0%,#E2CFA2 55%,#D6B378 100%); color:#2B2312; padding:14px 26px; border-radius:999px; font-weight:700; font-size:14px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:transform .15s ease, box-shadow .15s ease; box-shadow:0 10px 26px -10px rgba(214,179,120,0.55); border:none; cursor:pointer; font-family:inherit; }
+  .hero-ctas{ justify-content:center; }
+  #faqLegal{ scroll-margin-top:96px; }
+  .hero-ctas > .btn-biblioteca{ flex:0 0 auto; }
+  .btn-biblioteca:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -10px rgba(214,179,120,0.65); }
+
 </style>
 </head>
 <body>
@@ -903,6 +909,7 @@
         <div class="hero-ctas">
           <button class="btn-primary-lg" data-nav="prumo">Explorar o Prumo Finance <svg class="icon"><use href="#ic-arrow-r"/></svg></button>
           <button class="btn-patrium" data-nav="patrium">Explorar o Patrium Invest <svg class="icon"><use href="#ic-arrow-r"/></svg></button>
+          <button class="btn-biblioteca" data-nav="biblioteca">Explorar a Biblioteca <svg class="icon"><use href="#ic-arrow-r"/></svg></button>
         </div>
         <div class="hero-trust">
           <span><svg class="icon"><use href="#ic-grid"/></svg> Organização financeira estruturada</span>
@@ -1751,7 +1758,7 @@
 
       <div class="assist-grid stagger">
         <div class="assist-card reveal"><div class="assist-ic"><svg class="icon"><use href="#ic-bulb"/></svg></div><h3>Dicas e sugestões</h3><p>Recomendações e orientações que ajudam a interpretar informações e a identificar pontos que merecem atenção.</p></div>
-        <div class="assist-card reveal"><div class="assist-ic"><svg class="icon"><use href="#ic-book"/></svg></div><h3>Educação financeira</h3><p>Conteúdos e explicações que tornam conceitos financeiros mais compreensíveis e apoiam o desenvolvimento de maior autonomia.</p></div>
+        <div class="assist-card reveal"><div class="assist-ic"><svg class="icon"><use href="#ic-book"/></svg></div><h3>Educação financeira</h3><p>Conteúdos e explicações que tornam conceitos financeiros mais compreensíveis e apoiam o desenvolvimento de maior autonomia. Os livros da Biblioteca Bússola aprofundam cada etapa da jornada.</p><p style="margin-top:14px;"><button type="button" data-nav="biblioteca" style="background:none;border:none;padding:0;cursor:pointer;font:600 13px IBM Plex Sans,sans-serif;color:#7FE3D3;text-decoration:underline;text-underline-offset:3px;">Conhecer os livros &rarr;</button></p></div>
         <div class="assist-card reveal"><div class="assist-ic"><svg class="icon"><use href="#ic-chat"/></svg></div><h3>Assistência inteligente</h3><p>Um assistente baseado em IA que ajuda a esclarecer dúvidas, interpretar informações e tornar a utilização dos dados mais simples e útil.</p></div>
       </div>
 
@@ -1841,6 +1848,13 @@
         <div class="section-eyebrow">Além do software</div>
         <h2 class="section-title">O conhecimento que acompanha a jornada</h2>
         <p class="section-lead">A Biblioteca Bússola reúne três livros digitais que seguem a mesma progressão dos softwares: organizar, investir e proteger. Cada livro pode ser lido sozinho.</p>
+      </div>
+      <div class="value-grid stagger" style="margin-top:8px;">
+        <div class="plain-card reveal"><div class="tag">Livro 1 · Organizar</div><h3>A Vida Financeira Organizada</h3><p>A base: entender para onde vai o dinheiro e montar a estrutura que o Prumo Finance ajuda a manter.</p></div>
+        <div class="plain-card reveal"><div class="tag">Livro 2 · Investir</div><h3>Investimentos e Construção de Patrimônio</h3><p>O passo seguinte: investir com estratégia e acompanhar a evolução, como faz o Patrium Invest.</p></div>
+        <div class="plain-card reveal"><div class="tag">Livro 3 · Proteger</div><h3>Proteção Financeira e Gestão de Riscos</h3><p>O que foi construído precisa ser protegido: riscos, imprevistos e preparação para o futuro.</p></div>
+      </div>
+      <div class="section-intro-center reveal" style="margin-top:32px;">
         <button class="btn-primary-lg" data-nav="biblioteca" style="margin-top:8px;">Conhecer a Biblioteca <svg class="icon"><use href="#ic-arrow-r"/></svg></button>
       </div>
     </div>
@@ -1902,69 +1916,6 @@
       </div>
     </div>
   </section>
-  <section style="background:var(--surface-2);">
-    <div class="wrap">
-      <div class="section-eyebrow reveal">Legal</div>
-      <h2 class="section-title reveal">Privacidade e Termos de Uso</h2>
-      <div class="legal-accordion reveal-scale">
-        <div class="legal-item">
-          <button class="legal-q">Privacidade e dados, como tratamos os seus dados nos nossos softwares<span class="plus">+</span></button>
-          <div class="legal-a"><div class="legal-a-inner">
-            <p style="font-size:13px; color:var(--text-soft); line-height:1.65;">Os nossos softwares foram desenhados para que a sua privacidade não dependa de uma promessa nossa: depende de como cada produto foi construído. Cada decisão de arquitetura, do armazenamento ao backup, é tomada para manter os seus dados sob o seu controlo. No Prumo Finance, hoje disponível, isso significa:</p>
-            <div class="mini-grid">
-              <div class="mini-card"><div class="tag">Armazenamento</div><h5>Tudo fica no seu navegador</h5><p>Os seus dados são salvos localmente, no dispositivo onde você usa o Prumo. Nada é enviado para um servidor nosso, nem processado remotamente.</p></div>
-              <div class="mini-card"><div class="tag">Compartilhamento</div><h5>Sem venda nem troca de dados</h5><p>Não vendemos, alugamos nem compartilhamos os seus dados com terceiros, porque simplesmente não temos acesso a eles.</p></div>
-              <div class="mini-card"><div class="tag">Controle</div><h5>Backup nas suas mãos</h5><p>Você pode exportar um backup (JSON) e importar quando quiser, inclusive ao trocar de aparelho ou limpar o navegador.</p></div>
-              <div class="mini-card"><div class="tag">Acesso</div><h5>Login e senha próprios</h5><p>O acesso ao painel é protegido por login e senha criados por você no primeiro uso, e usados sempre que quiser entrar novamente.</p></div>
-            </div>
-          </div></div>
-        </div>
-        <div class="legal-item">
-          <button class="legal-q">Termos de Uso, condições do Prumo Finance<span class="plus">+</span></button>
-          <div class="legal-a"><div class="legal-a-inner">
-            <p style="font-size:13px; color:var(--text-soft); line-height:1.65;">Ao adquirir o Prumo Finance, o comprador concorda com as condições abaixo. Estas condições regem o uso do painel disponibilizado pela Bússola Financeira YS.</p>
-            <div class="mini-grid">
-              <div class="mini-card"><div class="tag">Licença</div><h5>Uso pessoal, produto original</h5><p>Licenciado para uso pessoal do comprador, com acesso ao painel completo, sem versão limitada.</p></div>
-              <div class="mini-card"><div class="tag">Pagamento</div><h5>Pagamento único, sem mensalidade</h5><p>Cobrado uma única vez, via Pix ou cartão, através de checkout seguro, sem cobrança recorrente.</p></div>
-              <div class="mini-card"><div class="tag">Responsabilidade</div><h5>Ferramenta educativa, não consultoria</h5><p>O conteúdo educativo e as projeções são estimativas ilustrativas e não substituem aconselhamento financeiro profissional.</p></div>
-              <div class="mini-card"><div class="tag">Suporte e dados</div><h5>Suporte incluso, dados sob sua guarda</h5><p>Suporte por e-mail e chat, por tempo indeterminado; a guarda do backup dos seus dados é responsabilidade sua.</p></div>
-              <div class="mini-card"><div class="tag">Cancelamento</div><h5>Sem mensalidade para cancelar</h5><p>Como é um pagamento único, não existe assinatura para cancelar. Reembolso segue a política da plataforma de checkout usada.</p></div>
-              <div class="mini-card"><div class="tag">Atualizações</div><h5>Incluídas no pagamento único</h5><p>As atualizações do Prumo Finance estão incluídas na compra, sem custo adicional.</p></div>
-              <div class="mini-card"><div class="tag">Propriedade</div><h5>Conteúdo e software protegidos</h5><p>O código, o design e o conteúdo do Prumo Finance são propriedade da Bússola Financeira YS.</p></div>
-              <div class="mini-card"><div class="tag">Alterações</div><h5>Termos podem ser atualizados</h5><p>Podemos atualizar estes Termos de Uso ao longo do tempo, sempre publicados nesta mesma página.</p></div>
-            </div>
-          </div></div>
-        </div>
-        <div class="legal-item">
-          <button class="legal-q">Privacidade do Patrium Invest<span class="plus">+</span></button>
-          <div class="legal-a"><div class="legal-a-inner">
-            <p style="font-size:13px; color:var(--text-soft); line-height:1.65;">O Patrium Invest segue o mesmo princípio que orienta todos os softwares da Bússola Financeira YS: privacidade tratada como decisão de arquitetura, não apenas como promessa de marketing. Os dados patrimoniais que você registra pertencem só a você.</p>
-            <div class="mini-grid">
-              <div class="mini-card"><div class="tag">Compartilhamento</div><h5>Sem venda nem troca de dados</h5><p>Não vendemos, alugamos nem compartilhamos os seus dados patrimoniais com terceiros.</p></div>
-              <div class="mini-card"><div class="tag">Acesso</div><h5>Login e senha próprios</h5><p>O acesso ao Patrium é protegido por login e senha criados por você, independentes do Prumo Finance.</p></div>
-            </div>
-          </div></div>
-        </div>
-        <div class="legal-item">
-          <button class="legal-q">Termos de Uso do Patrium Invest<span class="plus">+</span></button>
-          <div class="legal-a"><div class="legal-a-inner">
-            <p style="font-size:13px; color:var(--text-soft); line-height:1.65;">Ao adquirir o Patrium Invest, o comprador concorda com as condições abaixo, que seguem o mesmo padrão aplicado ao Prumo Finance.</p>
-            <div class="mini-grid">
-              <div class="mini-card"><div class="tag">Licença</div><h5>Uso pessoal, produto original</h5><p>Licenciado para uso pessoal do comprador, com acesso ao cockpit completo, sem versão limitada.</p></div>
-              <div class="mini-card"><div class="tag">Pagamento</div><h5>R$ 149,90, pagamento único</h5><p>Cobrado uma única vez, via Pix ou cartão, através de checkout seguro, sem cobrança recorrente.</p></div>
-              <div class="mini-card"><div class="tag">Responsabilidade</div><h5>Ferramenta de acompanhamento, não consultoria</h5><p>O Patrium organiza e apresenta os dados que você registra; não constitui recomendação de investimento.</p></div>
-              <div class="mini-card"><div class="tag">Suporte e dados</div><h5>Suporte incluso, dados sob sua guarda</h5><p>Suporte por e-mail e chat, por tempo indeterminado; a guarda do backup dos seus dados é responsabilidade sua.</p></div>
-              <div class="mini-card"><div class="tag">Cancelamento</div><h5>Sem mensalidade para cancelar</h5><p>Como é um pagamento único, não existe assinatura para cancelar. Reembolso segue a política da plataforma de checkout usada.</p></div>
-              <div class="mini-card"><div class="tag">Atualizações</div><h5>Incluídas no pagamento único</h5><p>As atualizações do Patrium Invest estão incluídas na compra, sem custo adicional.</p></div>
-              <div class="mini-card"><div class="tag">Propriedade</div><h5>Conteúdo e software protegidos</h5><p>O código, o design e o conteúdo do Patrium Invest são propriedade da Bússola Financeira YS.</p></div>
-              <div class="mini-card"><div class="tag">Alterações</div><h5>Termos podem ser atualizados</h5><p>Podemos atualizar estes Termos de Uso ao longo do tempo, sempre publicados nesta mesma página.</p></div>
-            </div>
-          </div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section style="background:var(--surface-2);">
     <div class="wrap">
       <div class="section-intro-center reveal">
@@ -2124,6 +2075,69 @@
     </div>
   </section>
 
+  <section id="faqLegal">
+    <div class="wrap">
+      <div class="section-eyebrow reveal">Legal</div>
+      <h2 class="section-title reveal">Privacidade e Termos de Uso</h2>
+      <div class="legal-accordion reveal-scale">
+        <div class="legal-item">
+          <button class="legal-q">Privacidade e dados, como tratamos os seus dados nos nossos softwares<span class="plus">+</span></button>
+          <div class="legal-a"><div class="legal-a-inner">
+            <p style="font-size:13px; color:var(--text-soft); line-height:1.65;">Os nossos softwares foram desenhados para que a sua privacidade não dependa de uma promessa nossa: depende de como cada produto foi construído. Cada decisão de arquitetura, do armazenamento ao backup, é tomada para manter os seus dados sob o seu controlo. No Prumo Finance, hoje disponível, isso significa:</p>
+            <div class="mini-grid">
+              <div class="mini-card"><div class="tag">Armazenamento</div><h5>Tudo fica no seu navegador</h5><p>Os seus dados são salvos localmente, no dispositivo onde você usa o Prumo. Nada é enviado para um servidor nosso, nem processado remotamente.</p></div>
+              <div class="mini-card"><div class="tag">Compartilhamento</div><h5>Sem venda nem troca de dados</h5><p>Não vendemos, alugamos nem compartilhamos os seus dados com terceiros, porque simplesmente não temos acesso a eles.</p></div>
+              <div class="mini-card"><div class="tag">Controle</div><h5>Backup nas suas mãos</h5><p>Você pode exportar um backup (JSON) e importar quando quiser, inclusive ao trocar de aparelho ou limpar o navegador.</p></div>
+              <div class="mini-card"><div class="tag">Acesso</div><h5>Login e senha próprios</h5><p>O acesso ao painel é protegido por login e senha criados por você no primeiro uso, e usados sempre que quiser entrar novamente.</p></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="legal-item">
+          <button class="legal-q">Termos de Uso, condições do Prumo Finance<span class="plus">+</span></button>
+          <div class="legal-a"><div class="legal-a-inner">
+            <p style="font-size:13px; color:var(--text-soft); line-height:1.65;">Ao adquirir o Prumo Finance, o comprador concorda com as condições abaixo. Estas condições regem o uso do painel disponibilizado pela Bússola Financeira YS.</p>
+            <div class="mini-grid">
+              <div class="mini-card"><div class="tag">Licença</div><h5>Uso pessoal, produto original</h5><p>Licenciado para uso pessoal do comprador, com acesso ao painel completo, sem versão limitada.</p></div>
+              <div class="mini-card"><div class="tag">Pagamento</div><h5>Pagamento único, sem mensalidade</h5><p>Cobrado uma única vez, via Pix ou cartão, através de checkout seguro, sem cobrança recorrente.</p></div>
+              <div class="mini-card"><div class="tag">Responsabilidade</div><h5>Ferramenta educativa, não consultoria</h5><p>O conteúdo educativo e as projeções são estimativas ilustrativas e não substituem aconselhamento financeiro profissional.</p></div>
+              <div class="mini-card"><div class="tag">Suporte e dados</div><h5>Suporte incluso, dados sob sua guarda</h5><p>Suporte por e-mail e chat, por tempo indeterminado; a guarda do backup dos seus dados é responsabilidade sua.</p></div>
+              <div class="mini-card"><div class="tag">Cancelamento</div><h5>Sem mensalidade para cancelar</h5><p>Como é um pagamento único, não existe assinatura para cancelar. Reembolso segue a política da plataforma de checkout usada.</p></div>
+              <div class="mini-card"><div class="tag">Atualizações</div><h5>Incluídas no pagamento único</h5><p>As atualizações do Prumo Finance estão incluídas na compra, sem custo adicional.</p></div>
+              <div class="mini-card"><div class="tag">Propriedade</div><h5>Conteúdo e software protegidos</h5><p>O código, o design e o conteúdo do Prumo Finance são propriedade da Bússola Financeira YS.</p></div>
+              <div class="mini-card"><div class="tag">Alterações</div><h5>Termos podem ser atualizados</h5><p>Podemos atualizar estes Termos de Uso ao longo do tempo, sempre publicados nesta mesma página.</p></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="legal-item">
+          <button class="legal-q">Privacidade do Patrium Invest<span class="plus">+</span></button>
+          <div class="legal-a"><div class="legal-a-inner">
+            <p style="font-size:13px; color:var(--text-soft); line-height:1.65;">O Patrium Invest segue o mesmo princípio que orienta todos os softwares da Bússola Financeira YS: privacidade tratada como decisão de arquitetura, não apenas como promessa de marketing. Os dados patrimoniais que você registra pertencem só a você.</p>
+            <div class="mini-grid">
+              <div class="mini-card"><div class="tag">Compartilhamento</div><h5>Sem venda nem troca de dados</h5><p>Não vendemos, alugamos nem compartilhamos os seus dados patrimoniais com terceiros.</p></div>
+              <div class="mini-card"><div class="tag">Acesso</div><h5>Login e senha próprios</h5><p>O acesso ao Patrium é protegido por login e senha criados por você, independentes do Prumo Finance.</p></div>
+            </div>
+          </div></div>
+        </div>
+        <div class="legal-item">
+          <button class="legal-q">Termos de Uso do Patrium Invest<span class="plus">+</span></button>
+          <div class="legal-a"><div class="legal-a-inner">
+            <p style="font-size:13px; color:var(--text-soft); line-height:1.65;">Ao adquirir o Patrium Invest, o comprador concorda com as condições abaixo, que seguem o mesmo padrão aplicado ao Prumo Finance.</p>
+            <div class="mini-grid">
+              <div class="mini-card"><div class="tag">Licença</div><h5>Uso pessoal, produto original</h5><p>Licenciado para uso pessoal do comprador, com acesso ao cockpit completo, sem versão limitada.</p></div>
+              <div class="mini-card"><div class="tag">Pagamento</div><h5>R$ 149,90, pagamento único</h5><p>Cobrado uma única vez, via Pix ou cartão, através de checkout seguro, sem cobrança recorrente.</p></div>
+              <div class="mini-card"><div class="tag">Responsabilidade</div><h5>Ferramenta de acompanhamento, não consultoria</h5><p>O Patrium organiza e apresenta os dados que você registra; não constitui recomendação de investimento.</p></div>
+              <div class="mini-card"><div class="tag">Suporte e dados</div><h5>Suporte incluso, dados sob sua guarda</h5><p>Suporte por e-mail e chat, por tempo indeterminado; a guarda do backup dos seus dados é responsabilidade sua.</p></div>
+              <div class="mini-card"><div class="tag">Cancelamento</div><h5>Sem mensalidade para cancelar</h5><p>Como é um pagamento único, não existe assinatura para cancelar. Reembolso segue a política da plataforma de checkout usada.</p></div>
+              <div class="mini-card"><div class="tag">Atualizações</div><h5>Incluídas no pagamento único</h5><p>As atualizações do Patrium Invest estão incluídas na compra, sem custo adicional.</p></div>
+              <div class="mini-card"><div class="tag">Propriedade</div><h5>Conteúdo e software protegidos</h5><p>O código, o design e o conteúdo do Patrium Invest são propriedade da Bússola Financeira YS.</p></div>
+              <div class="mini-card"><div class="tag">Alterações</div><h5>Termos podem ser atualizados</h5><p>Podemos atualizar estes Termos de Uso ao longo do tempo, sempre publicados nesta mesma página.</p></div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section style="background:var(--surface-2);">
     <div class="wrap">
       <div class="section-intro-center reveal">
@@ -2180,7 +2194,7 @@
         <button class="fp" data-nav="biblioteca"><svg class="icon"><use href="#ic-book"/></svg> Biblioteca Bússola</button>
       </div>
       <div class="footer-links">
-        <button data-nav="quem-somos">Privacidade &amp; Termos</button>
+        <button data-nav="faq" data-faq-legal="1">Privacidade &amp; Termos</button>
         <button data-nav="faq">FAQ</button>
         <button data-nav="contato">Fale conosco</button>
       </div>
@@ -3019,6 +3033,8 @@
       if(cb) cb.click();
     });
   });
+
+  document.querySelectorAll('[data-faq-legal]').forEach(function(el){ el.addEventListener('click', function(){ setTimeout(function(){ var t = document.getElementById('faqLegal'); if(t) t.scrollIntoView({behavior:'smooth', block:'start'}); }, 800); }); });
 
   /* ---------- Movimento leve das capas no hero (apenas ponteiro fino, sem reduced-motion) ---------- */
   var fan = document.getElementById("biblioteca-fan");
