@@ -390,7 +390,7 @@
   .check-item.highlight .check-label{ color:var(--accent3); }
   .check-sub{ display:block; font-size:11px; font-weight:400; color:var(--text-soft); margin-top:1px; }
 
-  /* ===== Patrium: pillars (não card wall — lista narrativa em duas colunas) ===== */
+  /* ===== Patrium: pillars (não card wall — lista narrativa em 2 colunas) ===== */
   .pillar-columns{ display:grid; grid-template-columns:1fr 1fr; gap:0 40px; }
   @media (max-width:760px){ .pillar-columns{grid-template-columns:1fr;} }
   .pillar-item{ display:flex; gap:14px; padding:18px 0; border-bottom:1px solid rgba(255,255,255,0.08); }
@@ -763,7 +763,7 @@
   #view-biblioteca .biblioteca-price.is-empty{font:500 15px 'IBM Plex Sans', sans-serif; color:var(--on-dark-soft);}
   #view-biblioteca .biblioteca-facts{font:500 11.5px 'IBM Plex Mono', monospace; color:var(--on-dark-soft); margin:14px 0 0;}
   #view-biblioteca .biblioteca-status-note{font-size:12px; color:var(--on-dark-soft); margin:12px 0 0 !important; line-height:1.5;}
-  #view-biblioteca .biblioteca-disclaimer{text-align:center; font-size:12px; color:var(--on-dark-soft); margin:34px auto 0; max-width:640px; line-height:1.6;}
+  #view-biblioteca .biblioteca-disclaimer{text-align:center; font-size:12px; color:var(--on-dark-soft); margin:34px auto 0; max-width:1100px; line-height:1.6;}
   #view-biblioteca .biblioteca-faqlink{text-align:center; margin:14px 0 0;}
   #view-biblioteca .biblioteca-linkbtn{background:none; border:none; padding:0; cursor:pointer; font:600 13px 'IBM Plex Sans', sans-serif; color:var(--bib-gold); text-decoration:underline; text-underline-offset:3px;}
   #view-biblioteca .biblioteca-linkbtn:hover{color:#F8F3E4;}
@@ -822,6 +822,10 @@
   #view-biblioteca .biblioteca-col-saving{ font-size:12.5px !important; line-height:1.5 !important; margin:8px 0 0 !important; color:var(--bib-gold) !important; }
 
   .btn-biblioteca{ background:linear-gradient(135deg,#F3E9CF 0%,#E2CFA2 55%,#D6B378 100%); color:#2B2312; padding:14px 26px; border-radius:999px; font-weight:700; font-size:14px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:transform .15s ease, box-shadow .15s ease; box-shadow:0 10px 26px -10px rgba(214,179,120,0.55); border:none; cursor:pointer; font-family:inherit; }
+  #view-biblioteca .biblioteca-hint{ text-align:center; margin:18px 0 0; line-height:1; }
+  #view-biblioteca .bib-hint-arrow{ width:22px; height:22px; color:var(--bib-gold-ink); opacity:.9; animation:bibHintBob 1.8s ease-in-out infinite; }
+  @keyframes bibHintBob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(5px); } }
+  @media (prefers-reduced-motion:reduce){ #view-biblioteca .bib-hint-arrow{ animation:none; } }
   .hero-ctas{ justify-content:center; }
   .hero-trust{ justify-content:center; }
   .hero-inner > div:first-child{ text-align:center; }
@@ -1031,7 +1035,7 @@
   <section id="teaserSection">
     <div class="wrap">
       <div class="section-eyebrow reveal">O que construímos</div>
-      <h2 class="section-title reveal">Dois softwares, uma mesma visão de produto</h2>
+      <h2 class="section-title reveal">2 softwares, uma mesma visão de produto</h2>
       <p class="section-lead reveal">Cada solução responde a uma etapa distinta da jornada financeira e patrimonial. Conheça em profundidade as ideias, a estrutura e o propósito de cada uma.</p>
       <div class="teaser-duo reveal-scale">
         <button class="teaser-card prumo" data-nav="prumo">
@@ -1052,7 +1056,7 @@
           <svg class="icon mark" aria-hidden="true"><use href="#ic-book"/></svg>
           <h3>Biblioteca Bússola</h3>
           <p class="tagline">Conhecimento para organizar, investir e proteger.</p>
-          <p class="desc">Três livros digitais que acompanham a mesma jornada dos softwares: a organização da vida financeira, a construção do patrimônio e a proteção do que foi construído. Cada livro pode ser lido sozinho.</p>
+          <p class="desc">3 livros digitais que acompanham a mesma jornada dos softwares: a organização da vida financeira, a construção do patrimônio e a proteção do que foi construído. Cada livro pode ser lido sozinho.</p>
           <span class="enter">Explorar a Biblioteca <svg class="icon"><use href="#ic-arrow-r"/></svg></span>
         </button>
       </div>
@@ -1438,7 +1442,7 @@
             <div class="cockpit-panel" data-panel="7">
               <div class="label">Assistente do Patrium</div>
               <div class="cockpit-chat-bubble"><div class="who">Você</div>Como está a minha carteira este ano?</div>
-              <div class="cockpit-chat-bubble" style="margin-top:10px;"><div class="who">Patrium</div>Patrimônio de <b>R$ 214.380,00</b>, evolução de <b>+12,8%</b> em 12 meses. Carteira em <b>58% renda fixa</b>, <b>30% variável</b> e <b>12% reserva</b>, as duas primeiras acima do benchmark. Atenção: <b>42%</b> do total está numa única posição.</div>
+              <div class="cockpit-chat-bubble" style="margin-top:10px;"><div class="who">Patrium</div>Patrimônio de <b>R$ 214.380,00</b>, evolução de <b>+12,8%</b> em 12 meses. Carteira em <b>58% renda fixa</b>, <b>30% variável</b> e <b>12% reserva</b>, as 2 primeiras acima do benchmark. Atenção: <b>42%</b> do total está numa única posição.</div>
             </div>
             <div class="cockpit-progress"><div class="cockpit-progress-fill" id="cockpitProgressFill"></div></div>
           </div>
@@ -1511,7 +1515,7 @@
       <div class="section-intro-center reveal">
         <div class="section-eyebrow">Próximo passo</div>
         <h2 class="section-title">Aprofunde o conhecimento com a Biblioteca Bússola</h2>
-        <p class="section-lead">Três livros digitais acompanham a mesma jornada dos softwares: organizar, investir e proteger o patrimônio.</p>
+        <p class="section-lead">3 livros digitais acompanham a mesma jornada dos softwares: organizar, investir e proteger o patrimônio.</p>
         <button class="btn-primary-lg" data-nav="biblioteca" style="margin-top:8px;">Conhecer a Biblioteca <svg class="icon"><use href="#ic-arrow-r"/></svg></button>
       </div>
     </div>
@@ -1528,7 +1532,7 @@
         <div>
           <h1>Biblioteca Bússola</h1>
           <p class="biblioteca-tagline"><span>Conhecimento para organizar.</span> <span>Estratégia para construir.</span> <span>Clareza para proteger.</span></p>
-          <p class="view-banner-lead">Três livros digitais para transformar a forma como você organiza seu dinheiro, toma decisões de investimento e prepara seu futuro financeiro.</p>
+          <p class="view-banner-lead">3 livros digitais para transformar a forma como você organiza seu dinheiro, toma decisões de investimento e prepara seu futuro financeiro.</p>
           <div class="biblioteca-ctas">
             <button type="button" class="biblioteca-btn biblioteca-btn--primary" data-bib-scrollto="biblioteca-livros">Explorar a biblioteca <svg class="icon" aria-hidden="true"><use href="#ic-arrow-d"/></svg></button>
             <button type="button" class="biblioteca-btn biblioteca-btn--ghost" data-bib-scrollto="biblioteca-escolher">Escolher por onde começar</button>
@@ -1547,7 +1551,7 @@
   <div class="wrap">
     <div class="section-intro-center reveal">
       <div class="section-eyebrow">A lógica da coleção</div>
-      <h2 class="section-title" id="bib-h-logica">Da organização à proteção, em três passos</h2>
+      <h2 class="section-title" id="bib-h-logica">Da organização à proteção, em 3 passos</h2>
       <p class="section-lead">Cada livro pode ser lido sozinho, mas a coleção segue uma progressão: primeiro a base, depois a construção e, por fim, a proteção do que foi construído.</p>
     </div>
     <div class="biblioteca-steps stagger">
@@ -1562,9 +1566,8 @@
 <section id="biblioteca-livros" aria-labelledby="bib-h-livros">
   <div class="wrap">
     <div class="section-intro-center reveal">
-      <div class="section-eyebrow">Os três livros</div>
-      <h2 class="section-title" id="bib-h-livros">Escolha o livro do seu momento</h2>
-      <p class="section-lead">Role a página: a capa fica ao lado enquanto cada tema do livro é apresentado.</p>
+      <div class="section-eyebrow">Os 3 livros</div>
+      <h2 class="section-title" id="bib-h-livros">Explore os livros da biblioteca</h2>
     </div>
     <div class="bib-stories">
 
@@ -1608,7 +1611,7 @@
             <p class="desc" data-role="desc">Compreenda as principais classes de ativos, aprenda a avaliar alternativas de investimento e desenvolva uma visão mais estruturada para construir e acompanhar sua carteira patrimonial.</p>
           </div>
           <div class="bib-steps">
-            <div class="bib-step active" data-label="Tema" data-title="Renda fixa e renda variável"><div class="idx">01</div><h4>Renda fixa e renda variável</h4><p>As duas grandes famílias de investimentos e o papel de cada uma.</p></div>
+            <div class="bib-step active" data-label="Tema" data-title="Renda fixa e renda variável"><div class="idx">01</div><h4>Renda fixa e renda variável</h4><p>As 2 grandes famílias de investimentos e o papel de cada uma.</p></div>
             <div class="bib-step" data-label="Tema" data-title="Características e diferenças entre investimentos"><div class="idx">02</div><h4>Características e diferenças entre investimentos</h4><p>Como comparar alternativas por critérios claros, e não por impressão.</p></div>
             <div class="bib-step" data-label="Tema" data-title="Impostos e custos associados"><div class="idx">03</div><h4>Impostos e custos associados</h4><p>O que reduz o resultado ao longo do caminho e como considerá-lo na decisão.</p></div>
             <div class="bib-step" data-label="Tema" data-title="Construção e organização de uma carteira"><div class="idx">04</div><h4>Construção e organização de uma carteira</h4><p>Como juntar as peças numa carteira com lógica e objetivo.</p></div>
@@ -1686,7 +1689,7 @@
       <div><h3 id="biblioteca-result-title"></h3><p id="biblioteca-result-text"></p></div>
       <button type="button" class="biblioteca-btn biblioteca-btn--primary" id="biblioteca-result-btn" data-pick-book="livro1">Ver o livro <svg class="icon" aria-hidden="true"><use href="#ic-arrow-r"/></svg></button>
     </div>
-    <p class="biblioteca-hint" id="biblioteca-hint">Use as setas do teclado ou toque numa opção para ver a sugestão.</p>
+    <p class="biblioteca-hint" id="biblioteca-hint" aria-hidden="true"><svg class="icon bib-hint-arrow" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
   </div>
 </section>
 
@@ -1697,8 +1700,8 @@
     <div class="biblioteca-col-inner">
       <div class="reveal">
         <div class="section-eyebrow">Coleção completa</div>
-        <h2 class="section-title" id="bib-h-colecao">Três perspectivas. Uma visão financeira mais completa.</h2>
-        <p>Organizar, investir e proteger não são etapas isoladas: cada uma sustenta as outras. Estudar os três temas de forma complementar ajuda a ligar o dia a dia financeiro, a construção de patrimônio e a preparação para imprevistos.</p>
+        <h2 class="section-title" id="bib-h-colecao">3 perspectivas. Uma visão financeira mais completa.</h2>
+        <p>Organizar, investir e proteger não são etapas isoladas: cada uma sustenta as outras. Estudar os 3 temas de forma complementar ajuda a ligar o dia a dia financeiro, a construção de patrimônio e a preparação para imprevistos.</p>
         <div class="biblioteca-col-buy" data-book="colecao">
           <div class="biblioteca-col-price" data-role="price"></div>
           <div data-role="action"></div>
@@ -1744,7 +1747,7 @@
       <div class="timeline">
         <div class="timeline-step"><div class="node"><svg class="icon"><use href="#ic-grid"/></svg></div><h3>Organizar</h3><p>Reunir renda, despesas, cartões, dívidas e investimentos, que normalmente estão espalhados entre bancos, aplicativos e anotações soltas, num único lugar. Na prática, o usuário registra cada movimento e passa a ter, pela primeira vez, o retrato completo da própria vida financeira.</p><span class="who"><span class="p">Prumo Finance</span></span></div>
         <div class="timeline-step"><div class="node"><svg class="icon"><use href="#ic-layers"/></svg></div><h3>Compreender</h3><p>Transformar lançamentos soltos em dashboard, gráficos e indicadores automáticos, sem exigir fórmula ou planilha. O usuário vê, em tempo real, quanto ganha, quanto gasta e quanto sobra, sem precisar de calcular nada manualmente.</p><span class="who"><span class="p">Prumo Finance</span></span></div>
-        <div class="timeline-step"><div class="node"><svg class="icon"><use href="#ic-target"/></svg></div><h3>Decidir</h3><p>Com clareza sobre o presente, torna-se possível decidir com informação em vez de achismo: quanto investir, onde cortar despesas, quando agir sobre uma dívida. As duas soluções apoiam este momento, cada uma na sua área.</p><span class="who"><span class="p">Prumo Finance</span><span class="pt">Patrium Invest</span></span></div>
+        <div class="timeline-step"><div class="node"><svg class="icon"><use href="#ic-target"/></svg></div><h3>Decidir</h3><p>Com clareza sobre o presente, torna-se possível decidir com informação em vez de achismo: quanto investir, onde cortar despesas, quando agir sobre uma dívida. As 2 soluções apoiam este momento, cada uma na sua área.</p><span class="who"><span class="p">Prumo Finance</span><span class="pt">Patrium Invest</span></span></div>
         <div class="timeline-step"><div class="node"><svg class="icon"><use href="#ic-pulse"/></svg></div><h3>Acompanhar</h3><p>Evolução patrimonial, alocação e performance passam a ser acompanhadas ao longo do tempo, não apenas no momento da decisão. O usuário consegue ver como cada posição evoluiu, mês a mês, e identificar o que está funcionando.</p><span class="who"><span class="pt">Patrium Invest</span></span></div>
         <div class="timeline-step"><div class="node"><svg class="icon"><use href="#ic-wallet"/></svg></div><h3>Construir</h3><p>A soma de decisões acompanhadas ao longo do tempo é o que constrói patrimônio de verdade. O objetivo final não é um painel bonito, é uma trajetória patrimonial que o usuário consegue ver, entender e ajustar continuamente.</p><span class="who"><span class="pt">Patrium Invest</span></span></div>
       </div>
@@ -1787,7 +1790,7 @@
     <div class="wrap">
       <div class="section-intro-center reveal">
         <div class="section-eyebrow">Próximo passo</div>
-        <h2 class="section-title">Veja como os dois produtos se encaixam</h2>
+        <h2 class="section-title">Veja como os 2 produtos se encaixam</h2>
         <p class="section-lead">Prumo Finance e Patrium Invest fazem parte da mesma jornada. Entenda como se complementam.</p>
         <button class="btn-primary-lg" data-nav="ecossistema" style="margin-top:8px;">Ver o ecossistema <svg class="icon"><use href="#ic-arrow-r"/></svg></button>
       </div>
@@ -1851,7 +1854,7 @@
       <div class="section-intro-center reveal">
         <div class="section-eyebrow">Além do software</div>
         <h2 class="section-title">O conhecimento que acompanha a jornada</h2>
-        <p class="section-lead">A Biblioteca Bússola reúne três livros digitais que seguem a mesma progressão dos softwares: organizar, investir e proteger. Cada livro pode ser lido sozinho.</p>
+        <p class="section-lead">A Biblioteca Bússola reúne 3 livros digitais que seguem a mesma progressão dos softwares: organizar, investir e proteger. Cada livro pode ser lido sozinho.</p>
       </div>
       <div class="value-grid stagger" style="margin-top:8px;">
         <div class="plain-card reveal"><div class="tag">Livro 1 · Organizar</div><h3>A Vida Financeira Organizada</h3><p>A base: entender para onde vai o dinheiro e montar a estrutura que o Prumo Finance ajuda a manter.</p></div>
@@ -1955,12 +1958,12 @@
 
       <div class="faq-group active" data-cat="bussola">
         <div class="faq-list">
-          <div class="faq-item"><button class="faq-q">O que é a Bússola Financeira YS?<span class="plus">+</span></button><div class="faq-a"><p>É a empresa por trás do Prumo Finance e do Patrium Invest: dois softwares que ajudam a organizar a vida financeira e a construir patrimônio.</p></div></div>
+          <div class="faq-item"><button class="faq-q">O que é a Bússola Financeira YS?<span class="plus">+</span></button><div class="faq-a"><p>É a empresa por trás do Prumo Finance e do Patrium Invest: 2 softwares que ajudam a organizar a vida financeira e a construir patrimônio.</p></div></div>
           <div class="faq-item"><button class="faq-q">Qual é a diferença entre a Bússola e os produtos Prumo e Patrium?<span class="plus">+</span></button><div class="faq-a"><p>A Bússola Financeira YS é a empresa e a visão por trás do ecossistema. Prumo Finance e Patrium Invest são os softwares que ela desenvolve, cada um com o seu próprio propósito.</p></div></div>
           <div class="faq-item"><button class="faq-q">A Bússola Financeira YS oferece quais tipos de soluções?<span class="plus">+</span></button><div class="faq-a"><p>Softwares para organizar a vida financeira e para acompanhar a construção de patrimônio, seguindo sempre a mesma filosofia de clareza e privacidade.</p></div></div>
           <div class="faq-item"><button class="faq-q">Qual produto devo escolher para começar?<span class="plus">+</span></button><div class="faq-a"><p>Normalmente, o Prumo Finance é o ponto de partida, já que organiza a base financeira. Depois, o Patrium Invest acompanha a construção do patrimônio. Mas você pode escolher o que fizer mais sentido para o seu momento.</p></div></div>
           <div class="faq-item"><button class="faq-q">Os produtos podem ser utilizados de forma independente?<span class="plus">+</span></button><div class="faq-a"><p>Sim. Cada software resolve uma etapa diferente da jornada financeira e pode ser usado sozinho, sem depender do outro.</p></div></div>
-          <div class="faq-item"><button class="faq-q">Como os produtos da Bússola se complementam?<span class="plus">+</span></button><div class="faq-a"><p>O Prumo organiza a vida financeira como um todo; o Patrium acompanha especificamente a construção e a evolução do patrimônio. A experiência é a mesma nos dois (dashboard, relatórios, dicas, assistente, modo claro/escuro), o que muda é o que cada um organiza.</p></div></div>
+          <div class="faq-item"><button class="faq-q">Como os produtos da Bússola se complementam?<span class="plus">+</span></button><div class="faq-a"><p>O Prumo organiza a vida financeira como um todo; o Patrium acompanha especificamente a construção e a evolução do patrimônio. A experiência é a mesma nos 2 (dashboard, relatórios, dicas, assistente, modo claro/escuro), o que muda é o que cada um organiza.</p></div></div>
           <div class="faq-item"><button class="faq-q">Os produtos têm o mesmo login?<span class="plus">+</span></button><div class="faq-a"><p>Não. Cada software tem o seu próprio acesso, já que são produtos independentes dentro do mesmo ecossistema.</p></div></div>
           <div class="faq-item"><button class="faq-q">Os produtos são vendidos em pacote ou separadamente?<span class="plus">+</span></button><div class="faq-a"><p>Separadamente. Cada software tem o seu próprio preço e checkout, e pode ser comprado de forma independente.</p></div></div>
           <div class="faq-item"><button class="faq-q">A Bússola oferece suporte aos usuários?<span class="plus">+</span></button><div class="faq-a"><p>Sim. Todos os softwares da Bússola incluem suporte por e-mail e chat exclusivo dentro do próprio painel.</p></div></div>
@@ -2007,7 +2010,7 @@
           <div class="faq-item"><button class="faq-q">Como faço para adquirir o Patrium Invest?<span class="plus">+</span></button><div class="faq-a"><p>Do mesmo jeito que o Prumo: compre pelo checkout, Pix ou cartão, e o acesso é liberado assim que o pagamento é confirmado.</p></div></div>
           <div class="faq-item"><button class="faq-q">Qual o valor do Patrium Invest?<span class="plus">+</span></button><div class="faq-a"><p>R$ 149,90, pagamento único, sem mensalidade, igual ao modelo do Prumo Finance.</p></div></div>
           <div class="faq-item"><button class="faq-q">Que tipos de investimentos posso acompanhar no Patrium?<span class="plus">+</span></button><div class="faq-a"><p>Renda fixa e renda variável, incluindo ações, FIIs, ETFs, BDRs e criptoativos, cada um com a sua própria posição.</p></div></div>
-          <div class="faq-item"><button class="faq-q">Posso acompanhar renda fixa e renda variável na mesma carteira?<span class="plus">+</span></button><div class="faq-a"><p>Sim. O Patrium reúne as duas classes no mesmo painel, com alocação e performance calculadas para a carteira como um todo.</p></div></div>
+          <div class="faq-item"><button class="faq-q">Posso acompanhar renda fixa e renda variável na mesma carteira?<span class="plus">+</span></button><div class="faq-a"><p>Sim. O Patrium reúne as 2 classes no mesmo painel, com alocação e performance calculadas para a carteira como um todo.</p></div></div>
           <div class="faq-item"><button class="faq-q">Posso acompanhar ações, FIIs e outros ativos?<span class="plus">+</span></button><div class="faq-a"><p>Sim, cada posição de renda variável (ações, FIIs, ETFs, BDRs, cripto) é acompanhada com o seu próprio desempenho.</p></div></div>
           <div class="faq-item"><button class="faq-q">Posso registrar investimentos de diferentes instituições?<span class="plus">+</span></button><div class="faq-a"><p>Sim. Você pode registrar posições em diferentes bancos e corretoras, cada uma com o seu próprio histórico dentro do painel.</p></div></div>
           <div class="faq-item"><button class="faq-q">O Patrium permite acompanhar aportes e movimentações ao longo do tempo?<span class="plus">+</span></button><div class="faq-a"><p>Sim. O histórico patrimonial completo mostra aportes e a evolução da carteira mês a mês.</p></div></div>
@@ -2032,7 +2035,7 @@
 
       <div class="faq-group" data-cat="biblioteca">
         <div class="faq-list">
-          <div class="faq-item"><button class="faq-q">O que é a Biblioteca Bússola?<span class="plus">+</span></button><div class="faq-a"><p>É uma coleção de três livros digitais da Bússola Financeira YS, sobre organização financeira, investimentos e proteção do patrimônio. Cada livro tem um foco próprio e pode ser lido de forma independente.</p></div></div>
+          <div class="faq-item"><button class="faq-q">O que é a Biblioteca Bússola?<span class="plus">+</span></button><div class="faq-a"><p>É uma coleção de 3 livros digitais da Bússola Financeira YS, sobre organização financeira, investimentos e proteção do patrimônio. Cada livro tem um foco próprio e pode ser lido de forma independente.</p></div></div>
           <div class="faq-item"><button class="faq-q">Os livros são digitais?<span class="plus">+</span></button><div class="faq-a"><p>Sim. São ebooks em PDF, que abrem em qualquer celular, tablet ou computador com um leitor de PDF. Não há loja física nem área de login.</p></div></div>
           <div class="faq-item"><button class="faq-q">Quanto custam os livros?<span class="plus">+</span></button><div class="faq-a"><p data-role="faq-preco">Os preços aparecem na página da Biblioteca Bússola, em cada livro.</p></div></div>
           <div class="faq-item"><button class="faq-q">Posso comprar cada livro individualmente?<span class="plus">+</span></button><div class="faq-a"><p>Sim. Cada livro tem o seu próprio botão de compra. A coleção completa é uma opção à parte.</p></div></div>
@@ -2676,7 +2679,7 @@
         delay += isConnector ? 420 : 260;
       });
       // Ativa o pulso de todos os conectores ao mesmo tempo, só depois que a
-      // sequência de entrada terminou — assim os três ficam sempre sincronizados.
+      // sequência de entrada terminou — assim os 3 ficam sempre sincronizados.
       setTimeout(function(){
         connectors.forEach(function(c){ c.classList.add('flowing'); });
       }, delay + 200);
@@ -2929,7 +2932,7 @@
   if(sav && allBooks && colP !== null){
     var sum = Math.round(bookP.reduce(function(a, b){ return a + b; }, 0) * 100) / 100;
     var diff = Math.round((sum - colP) * 100) / 100;
-    if(diff > 0){ sav.textContent = "Os três livros separados somam " + fmt(sum) + ". Na coleção, você economiza " + fmt(diff) + "."; sav.hidden = false; }
+    if(diff > 0){ sav.textContent = "Os 3 livros separados somam " + fmt(sum) + ". Na coleção, você economiza " + fmt(diff) + "."; sav.hidden = false; }
   }
   document.querySelectorAll('[data-role="faq-entrega"]').forEach(function(el){
     if(CFG.faq && typeof CFG.faq.entrega === "string" && CFG.faq.entrega.trim()) el.textContent = CFG.faq.entrega.trim();
@@ -2937,7 +2940,7 @@
   var fCol = document.querySelector('[data-role="faq-colecao"]');
   if(fCol){
     fCol.textContent = colStatus === "disponivel"
-      ? "Sim. A coleção completa tem um botão próprio, na secção \"Três perspectivas\" desta página."
+      ? "Sim. A coleção completa tem um botão próprio, na secção \"3 perspectivas\" desta página."
       : "A coleção completa está prevista, mas ainda não está disponível para compra. Quando for criada, terá um botão próprio na secção da coleção.";
   }
 
@@ -2945,7 +2948,7 @@
   var REC = {
     livro1:{ title:"Comece pelo Livro 1: A Vida Financeira Organizada", text:"Ele foi pensado para criar a base: compreender a situação atual, organizar receitas e despesas e definir prioridades antes de decisões mais complexas." },
     livro2:{ title:"Vale olhar o Livro 2: Investimentos e Construção de Patrimônio", text:"Ele aprofunda classes de ativos, custos e impostos, a construção da carteira e o seu acompanhamento. Costuma fazer mais sentido quando as contas já estão organizadas." },
-    livro3:{ title:"O Livro 3 é o seu: Proteção Financeira e Gestão de Riscos", text:"Ele trata de riscos, vulnerabilidades e imprevistos, e de como pensar a proteção da estabilidade financeira. Complementa os outros dois livros." }
+    livro3:{ title:"O Livro 3 é o seu: Proteção Financeira e Gestão de Riscos", text:"Ele trata de riscos, vulnerabilidades e imprevistos, e de como pensar a proteção da estabilidade financeira. Complementa os outros 2 livros." }
   };
   var result = document.getElementById("biblioteca-result");
   var rTitle = document.getElementById("biblioteca-result-title");
