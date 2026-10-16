@@ -725,18 +725,6 @@
   #view-biblioteca .biblioteca-stack .fc--1{left:0; transform:translateY(-44%) rotate(-5deg); z-index:1;}
   #view-biblioteca .biblioteca-stack .fc--2{left:50%; transform:translate(-50%,-52%); z-index:3;}
   #view-biblioteca .biblioteca-stack .fc--3{right:0; transform:translateY(-44%) rotate(5deg); z-index:2;}
-  #view-biblioteca .biblioteca-faq{display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; max-width:820px; margin:0 auto;}
-  #view-biblioteca .biblioteca-faq-item{background:var(--surface);}
-  #view-biblioteca .biblioteca-faq-q{margin:0; font:inherit;}
-  #view-biblioteca .biblioteca-faq-q button{width:100%; text-align:left; background:none; border:none; padding:18px 22px; font:600 14.5px/1.4 'IBM Plex Sans', sans-serif; color:var(--text); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; min-height:56px;}
-  #view-biblioteca .biblioteca-faq-q button:hover{background:var(--surface-2);}
-  #view-biblioteca .biblioteca-faq-q .plus{font:400 20px 'IBM Plex Mono', monospace; color:var(--accent2-ink); transition:transform .25s ease; flex-shrink:0; line-height:1;}
-  #view-biblioteca .biblioteca-faq-item.open .plus{transform:rotate(45deg);}
-  #view-biblioteca .biblioteca-faq-a{display:grid; grid-template-rows:0fr; transition:grid-template-rows .3s ease;}
-  #view-biblioteca .biblioteca-faq-item.open .biblioteca-faq-a{grid-template-rows:1fr;}
-  #view-biblioteca .biblioteca-faq-a > div{overflow:hidden;}
-  #view-biblioteca .biblioteca-faq-a p{margin:0; padding:0 22px 18px; font-size:14px; line-height:1.65; color:var(--text-soft);}
-  #view-biblioteca .biblioteca-faq-a a{color:var(--accent2-ink);}
   #view-biblioteca .biblioteca-final{background:linear-gradient(135deg,#080D18 0%, #0D1712 55%, #0E2C39 100%); color:var(--on-dark); border-radius:22px; padding:54px 32px; text-align:center; position:relative; overflow:hidden;}
   #view-biblioteca .biblioteca-final h2{font-size:clamp(24px, 5vw, 34px); color:#F8F3E4; margin:0 0 12px; line-height:1.2;}
   #view-biblioteca .biblioteca-final p{color:var(--on-dark-soft); font-size:15px; line-height:1.65; max-width:520px; margin:0 auto 26px;}
@@ -776,6 +764,9 @@
   #view-biblioteca .biblioteca-facts{font:500 11.5px 'IBM Plex Mono', monospace; color:var(--on-dark-soft); margin:14px 0 0;}
   #view-biblioteca .biblioteca-status-note{font-size:12px; color:var(--on-dark-soft); margin:12px 0 0 !important; line-height:1.5;}
   #view-biblioteca .biblioteca-disclaimer{text-align:center; font-size:12px; color:var(--on-dark-soft); margin:34px auto 0; max-width:640px; line-height:1.6;}
+  #view-biblioteca .biblioteca-faqlink{text-align:center; margin:14px 0 0;}
+  #view-biblioteca .biblioteca-linkbtn{background:none; border:none; padding:0; cursor:pointer; font:600 13px 'IBM Plex Sans', sans-serif; color:var(--bib-gold); text-decoration:underline; text-underline-offset:3px;}
+  #view-biblioteca .biblioteca-linkbtn:hover{color:#F8F3E4;}
   #view-biblioteca .bib-visual-wrap{position:sticky; top:96px; height:min(580px, 76vh);}
   #view-biblioteca .bib-visual{background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); border-radius:20px; height:100%; padding:22px 24px 26px; position:relative; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);}
   #view-biblioteca .bib-visual::before{content:""; position:absolute; inset:0; opacity:.35; background-image:linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); background-size:26px 26px; -webkit-mask-image:radial-gradient(ellipse 90% 80% at 50% 0%, #000 30%, transparent 85%); mask-image:radial-gradient(ellipse 90% 80% at 50% 0%, #000 30%, transparent 85%); pointer-events:none;}
@@ -1662,6 +1653,7 @@
 
     </div>
     <p class="biblioteca-disclaimer">Conteúdo educacional e informativo. Os livros não constituem recomendação de investimento nem prometem retornos ou resultados financeiros.</p>
+    <p class="biblioteca-faqlink"><button type="button" class="biblioteca-linkbtn" data-nav="faq" data-faq-cat="biblioteca">Ficou com dúvidas? Veja as perguntas frequentes sobre a Biblioteca</button></p>
   </div>
 </section>
 
@@ -1708,27 +1700,6 @@
         <div class="fc fc--2" data-cover="2"></div>
         <div class="fc fc--3" data-cover="3"></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= F. FAQ ================= -->
-<section id="biblioteca-faq" aria-labelledby="bib-h-faq">
-  <div class="wrap">
-    <div class="section-intro-center reveal">
-      <div class="section-eyebrow">Perguntas frequentes</div>
-      <h2 class="section-title" id="bib-h-faq">Antes de escolher</h2>
-    </div>
-    <div class="biblioteca-faq reveal" id="biblioteca-faq-list">
-      <div class="biblioteca-faq-item"><h3 class="biblioteca-faq-q"><button type="button" aria-expanded="false" aria-controls="bib-a1" id="bib-q1">O que é a Biblioteca Bússola?<span class="plus" aria-hidden="true">+</span></button></h3><div class="biblioteca-faq-a" id="bib-a1" role="region" aria-labelledby="bib-q1"><div><p>É uma coleção de três livros digitais da Bússola Financeira YS, sobre organização financeira, investimentos e proteção do patrimônio. Cada livro tem um foco próprio e pode ser lido de forma independente.</p></div></div></div>
-      <div class="biblioteca-faq-item"><h3 class="biblioteca-faq-q"><button type="button" aria-expanded="false" aria-controls="bib-a2" id="bib-q2">Os livros são digitais?<span class="plus" aria-hidden="true">+</span></button></h3><div class="biblioteca-faq-a" id="bib-a2" role="region" aria-labelledby="bib-q2"><div><p>Sim. São ebooks em PDF. Não há loja física.</p></div></div></div>
-      <div class="biblioteca-faq-item"><h3 class="biblioteca-faq-q"><button type="button" aria-expanded="false" aria-controls="bib-a3" id="bib-q3">Como recebo o livro depois de comprar?<span class="plus" aria-hidden="true">+</span></button></h3><div class="biblioteca-faq-a" id="bib-a3" role="region" aria-labelledby="bib-q3"><div><p data-role="faq-entrega">Depois da confirmação do pagamento, o PDF é enviado automaticamente para o e-mail usado na compra.</p></div></div></div>
-      <div class="biblioteca-faq-item"><h3 class="biblioteca-faq-q"><button type="button" aria-expanded="false" aria-controls="bib-a9" id="bib-q9">Quanto custam os livros?<span class="plus" aria-hidden="true">+</span></button></h3><div class="biblioteca-faq-a" id="bib-a9" role="region" aria-labelledby="bib-q9"><div><p data-role="faq-preco">Os preços aparecem em cada livro, nesta página.</p></div></div></div>
-      <div class="biblioteca-faq-item"><h3 class="biblioteca-faq-q"><button type="button" aria-expanded="false" aria-controls="bib-a4" id="bib-q4">Posso comprar cada livro individualmente?<span class="plus" aria-hidden="true">+</span></button></h3><div class="biblioteca-faq-a" id="bib-a4" role="region" aria-labelledby="bib-q4"><div><p>Sim. Cada livro tem o seu próprio botão de compra, no respectivo cartão.</p></div></div></div>
-      <div class="biblioteca-faq-item"><h3 class="biblioteca-faq-q"><button type="button" aria-expanded="false" aria-controls="bib-a5" id="bib-q5">Posso adquirir a coleção completa?<span class="plus" aria-hidden="true">+</span></button></h3><div class="biblioteca-faq-a" id="bib-a5" role="region" aria-labelledby="bib-q5"><div><p data-role="faq-colecao">Sim. A coleção completa tem um botão próprio, na secção &quot;Três perspectivas&quot; desta página.</p></div></div></div>
-      <div class="biblioteca-faq-item"><h3 class="biblioteca-faq-q"><button type="button" aria-expanded="false" aria-controls="bib-a6" id="bib-q6">Posso ler os livros no celular ou no computador?<span class="plus" aria-hidden="true">+</span></button></h3><div class="biblioteca-faq-a" id="bib-a6" role="region" aria-labelledby="bib-q6"><div><p>Sim. Os livros são arquivos PDF e abrem em qualquer celular, tablet ou computador com um leitor de PDF.</p></div></div></div>
-      <div class="biblioteca-faq-item"><h3 class="biblioteca-faq-q"><button type="button" aria-expanded="false" aria-controls="bib-a7" id="bib-q7">Preciso criar conta ou fazer login?<span class="plus" aria-hidden="true">+</span></button></h3><div class="biblioteca-faq-a" id="bib-a7" role="region" aria-labelledby="bib-q7"><div><p>Não. Os livros são PDFs. Não há área de alunos nem login para acessá-los.</p></div></div></div>
-      <div class="biblioteca-faq-item"><h3 class="biblioteca-faq-q"><button type="button" aria-expanded="false" aria-controls="bib-a8" id="bib-q8">Os livros garantem resultados financeiros?<span class="plus" aria-hidden="true">+</span></button></h3><div class="biblioteca-faq-a" id="bib-a8" role="region" aria-labelledby="bib-q8"><div><p>Não. O conteúdo é educacional e informativo. Os livros não constituem recomendação de investimento, não prometem rentabilidade e não substituem a orientação de um profissional habilitado quando ela for necessária.</p></div></div></div>
     </div>
   </div>
 </section>
@@ -1912,7 +1883,7 @@
         <div class="testimonial-avatar">YS</div>
         <div>
           <p class="testimonial-quote">"O verdadeiro valor do dinheiro não está apenas no que ele nos permite comprar hoje, mas na <span class="accent">tranquilidade e nas possibilidades que pode proporcionar amanhã</span>. Construir uma vida financeira equilibrada significa ter mais controle sobre nossas escolhas, estar preparados para imprevistos e criar condições para viver com mais liberdade, sem deixar nosso futuro ao acaso."</p>
-          <div class="testimonial-author"><strong>Ygor Souza</strong>, fundador da Bússola Financeira YS e criador do Prumo Finance e do Patrium Invest.</div>
+          <div class="testimonial-author"><strong>Ygor Souza</strong>, fundador da Bússola Financeira YS, criador do Prumo Finance, Patrium Invest e autor da Biblioteca Bússola, uma coleção de livros dedicada à organização financeira, à construção de patrimônio e à proteção do futuro financeiro. Seu trabalho é dedicado a transformar conceitos financeiros em conhecimento prático, ajudando pessoas a tomar decisões mais conscientes, construir patrimônio com estratégia e proteger o que conquistam ao longo da vida.</div>
         </div>
       </div>
     </div>
@@ -2110,7 +2081,9 @@
           <div class="faq-item"><button class="faq-q">Os livros são digitais?<span class="plus">+</span></button><div class="faq-a"><p>Sim. São ebooks em PDF, que abrem em qualquer celular, tablet ou computador com um leitor de PDF. Não há loja física nem área de login.</p></div></div>
           <div class="faq-item"><button class="faq-q">Quanto custam os livros?<span class="plus">+</span></button><div class="faq-a"><p data-role="faq-preco">Os preços aparecem na página da Biblioteca Bússola, em cada livro.</p></div></div>
           <div class="faq-item"><button class="faq-q">Posso comprar cada livro individualmente?<span class="plus">+</span></button><div class="faq-a"><p>Sim. Cada livro tem o seu próprio botão de compra. A coleção completa é uma opção à parte.</p></div></div>
+          <div class="faq-item"><button class="faq-q">Posso adquirir a coleção completa?<span class="plus">+</span></button><div class="faq-a"><p data-role="faq-colecao">Sim. A coleção completa tem um botão próprio, na secção da coleção da página Biblioteca Bússola.</p></div></div>
           <div class="faq-item"><button class="faq-q">Como recebo o livro depois de comprar?<span class="plus">+</span></button><div class="faq-a"><p data-role="faq-entrega">Depois da confirmação do pagamento, o PDF é enviado automaticamente para o e-mail usado na compra.</p></div></div>
+          <div class="faq-item"><button class="faq-q">Preciso criar conta ou fazer login?<span class="plus">+</span></button><div class="faq-a"><p>Não. Os livros são PDFs. Não há área de alunos nem login para acessá-los.</p></div></div>
           <div class="faq-item"><button class="faq-q">Os livros garantem resultados financeiros?<span class="plus">+</span></button><div class="faq-a"><p>Não. O conteúdo é educacional e informativo. Os livros não constituem recomendação de investimento, não prometem rentabilidade e não substituem a orientação de um profissional habilitado quando ela for necessária.</p></div></div>
         </div>
       </div>
@@ -3036,6 +3009,14 @@
       var open = !item.classList.contains("open");
       item.classList.toggle("open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+
+  /* ---------- Ligação ao FAQ geral do site (abre já na categoria Biblioteca) ---------- */
+  document.querySelectorAll("[data-faq-cat]").forEach(function(el){
+    el.addEventListener("click", function(){
+      var cb = document.querySelector('.faq-cat-btn[data-cat="' + el.getAttribute("data-faq-cat") + '"]');
+      if(cb) cb.click();
     });
   });
 
