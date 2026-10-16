@@ -639,6 +639,13 @@
   .footer-links button{ background:none; border:none; font:inherit; color:var(--on-dark-soft); text-decoration:none; cursor:pointer; padding:0; }
   .footer-links button:hover{ color:#fff; }
   .footer-bottom{ border-top:1px solid rgba(255,255,255,0.1); padding-top:18px; font-size:11px; color:var(--on-dark-soft); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  /* ===== Link para a Biblioteca Bússola (página própria em /biblioteca/) ===== */
+  .topnav-links a.nav-ext{ color:rgba(244,239,223,0.78); cursor:pointer; padding:6px 0; position:relative; white-space:nowrap; text-decoration:none; transition:color .15s ease; display:inline-block; }
+  .topnav-links a.nav-ext:hover{ color:#fff; }
+  .mobile-menu-links a.nav-ext{ display:block; color:#F8F3E4; font-family:'Fraunces',serif; font-size:24px; text-align:left; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.08); text-decoration:none; }
+  .footer-products a.nav-ext-fp{ display:flex; align-items:center; gap:8px; font-size:12px; color:var(--on-dark-soft); text-decoration:none; transition:color .15s ease; }
+  .footer-products a.nav-ext-fp:hover{ color:#fff; }
+  @media (min-width:1101px) and (max-width:1199px){ .topnav-links{ gap:15px; } .topnav-inner{ gap:12px; } }
 </style>
 </head>
 <body>
@@ -673,6 +680,7 @@
       <li><button data-nav="inicio">Bússola</button></li>
       <li><button data-nav="prumo">Prumo</button></li>
       <li><button data-nav="patrium">Patrium</button></li>
+      <li><a class="nav-ext" href="/biblioteca/">Biblioteca</a></li>
       <li><button data-nav="como-funciona">Como funciona</button></li>
       <li><button data-nav="ecossistema">Ecossistema</button></li>
       <li><button data-nav="quem-somos">Quem somos</button></li>
@@ -693,6 +701,7 @@
     <li><button data-nav="inicio">Bússola</button></li>
     <li><button data-nav="prumo">Prumo Finance</button></li>
     <li><button data-nav="patrium">Patrium Invest</button></li>
+    <li><a class="nav-ext" href="/biblioteca/">Biblioteca Bússola</a></li>
     <li><button data-nav="como-funciona">Como funciona</button></li>
     <li><button data-nav="ecossistema">Ecossistema</button></li>
     <li><button data-nav="quem-somos">Quem somos</button></li>
@@ -1748,6 +1757,7 @@
       <div class="footer-products">
         <button class="fp" data-nav="prumo"><img id="footerPrumoLogo" alt="Prumo Finance"> Prumo Finance</button>
         <button class="fp" data-nav="patrium"><img id="footerPatriumLogo" alt="Patrium Invest"> Patrium Invest</button>
+        <a class="fp nav-ext-fp" href="/biblioteca/"><svg class="icon"><use href="#ic-book"/></svg> Biblioteca Bússola</a>
       </div>
       <div class="footer-links">
         <button data-nav="quem-somos">Privacidade &amp; Termos</button>
